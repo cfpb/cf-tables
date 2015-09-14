@@ -1,0 +1,171 @@
+// Import external dependencies
+
+@import '../../cf-core/src/cf-core.less';
+
+/* ==========================================================================
+   Capital Framework
+   Table Styling
+   ========================================================================== */
+
+
+
+/* topdoc
+  name: Tables
+  family: cf-tables
+  patterns:
+    - name: Standard table (inherited from cf-core)
+      markup: |
+        <table>
+            <thead>
+                <tr>
+                    <th>Column 1 header</th>
+                    <th>Column 2 header</th>
+                    <th>Column 3 header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Row 1 header</th>
+                    <td>Row 1, column 2</td>
+                    <td>Row 1, column 3</td>
+                </tr>
+                <tr>
+                    <th>Row 2 header</th>
+                    <td>Row 2, column 2</td>
+                    <td>Row 2, column 3</td>
+                </tr>
+                <tr>
+                    <th>Row 3 header</th>
+                    <td>Row 3, column 2</td>
+                    <td>Row 3, column 3</td>
+                </tr>
+            </tbody>
+        </table>
+    - name: Standard table, with stripes
+      markup: |
+        <table class="table table__striped">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Column 1">Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses .table__striped class
+  tags:
+    - cf-tables
+*/
+
+// Color variables
+
+// .table
+
+@table__head-bg:              #f8f8f8;
+@table__cell-bg:              #ffffff;
+@table__cell-bg_alt:          #f8f8f8;
+@table__scrolling-border:     #e3e4e5;
+@table__border:               #babbbd;
+
+table {
+    .table__right-align {
+        text-align: right;
+    }
+}
+
+.table-wrapper__scrolling {
+    box-sizing: border-box;
+    border: 1px solid @table__scrolling-border;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+table.table__striped tbody > tr:nth-child(even) {
+    & > th,
+    & > td {
+        background: @table__cell-bg_alt;
+    }
+}
+
+.respond-to-max(640px, {
+    table.table__striped tbody > tr:nth-child(even) {
+        & > th,
+        & > td {
+            background: @table__cell-bg;
+        }
+    }
+    table.table__small_stacked {
+        tr,
+        td {
+            display: block;
+        }
+        thead {
+          display: none
+        }
+        td[data-label]:before {
+            .webfont-demi();
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: .41666667em;
+            font-size: .875em;
+            line-height: 1.83333333;
+            display: block;
+            content: attr(data-label);
+        }
+    }
+    table.table__small_entry-header {
+        tbody td:first-child {
+            margin-top: 0;
+            margin-bottom: 1.16666667em;
+            font-size: 1.125em;
+            font-weight: 400;
+            line-height: 1.22222222;
+            background-color: @table__head-bg;
+            padding-bottom: .75em;
+            margin-bottom: 10px;
+            border-bottom: 1px solid @table__border;
+        }
+        tbody tr {
+            border-bottom: none;
+        }
+    }
+    table-wrapper__scrolling .table {
+        thead {
+            display: block;
+        }
+        td,
+        th {
+            display: table-cell;
+        }
+    }
+});
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

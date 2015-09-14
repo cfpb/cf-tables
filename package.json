@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "pretest": "forever stopall -s && forever start -s ./node_modules/.bin/http-server",
+    "test": "pa11y localhost:8080/demo -s WCAG2AA && npm run coverage",
+    "posttest": "forever stopall -s",
+    "coverage": "./coverage.sh"
+  },
+  "devDependencies": {
+    "cf-component-demo": "^1.0.0",
+    "cf-grunt-config": "^1.0.1",
+    "coveralls": "^2.11.3",
+    "forever": "^0.15.1",
+    "glob": "~5.0.14",
+    "grunt": "~0.4.5",
+    "http-server": "^0.8.0",
+    "istanbul": "git://github.com/gotwarlost/istanbul#harmony",
+    "jasmine-node": "~1.14.5",
+    "jit-grunt": "~0.9.1",
+    "jsx-test": "0.7.5",
+    "load-grunt-tasks": "~3.2.0",
+    "node.extend": "~1.1.5",
+    "pa11y": "^2.4.2",
+    "phantomjs": "^1.9.18",
+    "react": "0.13.3",
+    "react-tools": "^0.13.3",
+    "time-grunt": "~1.2.1"
+  }
+}
