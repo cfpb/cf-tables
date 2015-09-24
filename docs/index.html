@@ -168,6 +168,83 @@
               </footer>
             </div>
             <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Standard Table with &quot;Small Screen Stacked&quot; Variation</h3>
+              <section class="docs-pattern_pattern">
+<table class="table table__small_stacked">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td>Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td>Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td>Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table table__small_stacked&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column 1&lt;/th&gt;
+      &lt;th&gt;Column 2&lt;/th&gt;
+      &lt;th&gt;Column 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row A&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell A2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell A3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row B&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell B2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell B3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row C&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell C2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell C3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row D&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell D2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell D3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table table__small_stacked\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Uses '.table__small_entry-header' class</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
               <h3 class="docs-pattern_header">Standard Table with &quot;Small Screen Stacked with Entry Header&quot; Variation</h3>
               <section class="docs-pattern_pattern">
 <table class="table table__small_entry-header">
@@ -244,6 +321,215 @@
                 </ul>
               </footer>
             </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Sortable Table</h3>
+              <section class="docs-pattern_pattern">
+<table class="table table__sortable">
+    <thead>
+        <tr>
+            <th>
+                Agency
+            </th>
+            <th class="sortable">
+                Languages
+            </th>
+            <th class="sortable" data-sort_type="number">
+                Distance
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Alpha
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                2.6 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Beta
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.4 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gamma
+            </td>
+            <td data-label="Languages">
+                English, French, Spanish
+            </td>
+            <td data-label="Distance">
+                1.4 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Delta
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                3.2 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Epsilon
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                1.6 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Zeta
+            </td>
+            <td data-label="Languages">
+              English, Spanish
+            </td>
+            <td data-label="Distance">
+              1.2 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Eta
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                11.1 mi
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table table__sortable&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;
+                Agency
+            &lt;/th&gt;
+            &lt;th class=&quot;sortable&quot;&gt;
+                Languages
+            &lt;/th&gt;
+            &lt;th class=&quot;sortable&quot; data-sort_type=&quot;number&quot;&gt;
+                Distance
+            &lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Alpha
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                2.6 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Beta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                1.4 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Gamma
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English, French, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                1.4 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Delta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                3.2 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Epsilon
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                1.6 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+              Zeta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+              English, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+              1.2 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Eta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                11.1 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table table__sortable\&amp;quot;&gt;\n    &lt;thead&gt;\n        &lt;tr&gt;\n            &lt;th&gt;\n                Agency\n            &lt;/th&gt;\n            &lt;th class=\&amp;quot;sortable\&amp;quot;&gt;\n                Languages\n            &lt;/th&gt;\n            &lt;th class=\&amp;quot;sortable\&amp;quot; data-sort_type=\&amp;quot;number\&amp;quot;&gt;\n                Distance\n            &lt;/th&gt;\n        &lt;/tr&gt;\n    &lt;/thead&gt;\n    &lt;tbody&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Alpha\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                2.6 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Beta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                1.4 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Gamma\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English, French, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                1.4 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Delta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                3.2 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Epsilon\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                1.6 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n              Zeta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n              English, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n              1.2 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Eta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                11.1 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n    &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Uses '.table__sortable' class to invoke sorting functions</li>
+                  <li>Columns which should be sortable have '.sortable' class applied to the THEAD TH</li>
+                  <li>Note: The class '.sorted_up' refers to a sort from smallest to greatest (first to last), and '.sorted_down' refers to a sort from greatest to smallest (last to first).</li>
+                  <li>Please note the importance of defining a THEAD and TBODY to preserve the table's header through sorting operations</li>
+                  <li>Any TH with the '.sortable' class can also be given the 'data-sort_type' attribute</li>
+                  <li>By default, the column values will be sorted as strings.</li>
+                  <li>By setting the 'data-sort_type' attribute to 'number', the column is sorted by Number value (see Distance in the example table above).</li>
+                </ul>
+              </footer>
+            </div>
           </div>
         </div>
       </div>
@@ -262,6 +548,6 @@
       </div>
     </div>
     <script src="static/docs/main.min.js"></script>
-    <script src="static/js/component.min.js"></script>
+    <script src="static/js/component.js"></script>
   </body>
 </html>

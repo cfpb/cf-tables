@@ -76,6 +76,41 @@
         </table>
       notes:
         - Uses '.table__striped' class
+    - name: Standard Table with "Small Screen Stacked" Variation
+      markup: |
+        <table class="table table__small_stacked">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td>Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td>Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td>Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__small_entry-header' class
     - name: Standard Table with "Small Screen Stacked with Entry Header" Variation
       markup: |
         <table class="table table__small_entry-header">
@@ -111,6 +146,115 @@
         </table>
       notes:
         - Uses '.table__small_entry-header' class
+    - name: Sortable Table
+      markup: |
+        <table class="table table__sortable">
+            <thead>
+                <tr>
+                    <th>
+                        Agency
+                    </th>
+                    <th class="sortable">
+                        Languages
+                    </th>
+                    <th class="sortable" data-sort_type="number">
+                        Distance
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Alpha
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        2.6 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Beta
+                    </td>
+                    <td data-label="Languages">
+                        English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        1.4 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gamma
+                    </td>
+                    <td data-label="Languages">
+                        English, French, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        1.4 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Delta
+                    </td>
+                    <td data-label="Languages">
+                        English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        3.2 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Epsilon
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        1.6 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      Zeta
+                    </td>
+                    <td data-label="Languages">
+                      English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                      1.2 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Eta
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        11.1 mi
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      notes:
+        - Uses '.table__sortable' class to invoke sorting functions
+        - Columns which should be sortable have '.sortable' class applied to the THEAD TH
+        - "Note: The class '.sorted_up' refers to a sort from smallest to greatest
+          (first to last), and '.sorted_down' refers to a sort from greatest to smallest
+          (last to first)."
+        - "Please note the importance of defining a THEAD and TBODY to preserve
+          the table's header through sorting operations"
+        - "Any TH with the '.sortable' class can also be given the 'data-sort_type'
+          attribute"
+        - By default, the column values will be sorted as strings.
+        - "By setting the 'data-sort_type' attribute to 'number', the column is sorted by
+          Number value (see Distance in the example table above)."
   tags:
     - cf-tables
 */
@@ -155,17 +299,25 @@ table.table__sortable {
     }
 
     .sortable:hover:after,
-    .sortable.sorted:after {
+    .sortable.sorted_up:after,
+    .sortable.sorted_down:after {
         visibility: visible;
     }
 
-    .sortable.sorted:hover:after {
+    .sortable.sorted_down:after,
+    .sortable.sorted_up:hover:after {
         -ms-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
 
+    .sortable.sorted_down:hover:after {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
 }
 
 .respond-to-max( @mobile-max, {

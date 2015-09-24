@@ -49,16 +49,27 @@ module.exports = function(grunt) {
 
       // Set a path to a concatenated JS file that you'd like to add before the
       // closing body tag.
-      jsBody: 'static/js/component.min.js',
+      jsBody: 'static/js/component.js',
 
       // Here's a banner with some template variables.
       // We'll be inserting it at the top of minified assets.
       banner: grunt.file.read('./node_modules/cf-grunt-config/cfpb-banner.txt'),
+
+
     },
     env: process.env,
 
     // Define tasks specific to this project here
 
+    concat: {
+      bodyScripts: {
+        src: [
+          'src/vendor/jquery/dist/jquery.js',
+          'src/js/cf-tables.js'
+        ],
+        dest: 'demo/static/js/component.js',
+      }
+    }
   };
 
 
@@ -101,7 +112,7 @@ module.exports = function(grunt) {
    * Create custom task aliases for our component build workflow.
    */
   grunt.registerTask('test', ['jshint', 'connect', 'qunit']);
-  grunt.registerTask('vendor', ['copy:docs_assets', 'concat:lt-ie8']);
-  grunt.registerTask('default', ['concat:lt-ie8', 'less', 'autoprefixer', 'copy:docs', 'topdoc']);
+  grunt.registerTask('vendor', ['copy:component_assets', 'copy:docs_assets', 'concat:bodyScripts']);
+  grunt.registerTask('default', ['concat:bodyScripts', 'concat:lt-ie8', 'less', 'autoprefixer', 'uglify', 'copy:docs', 'topdoc']);
 
 };

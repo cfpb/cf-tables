@@ -10,13 +10,13 @@
   'use strict';
 
   var SortableTable = function( table, options ) {
+    /*  At the moment, there are no default settings, but here's an object
+        for their future use! */
     var defaults = {
-          sortType: '',
-          index:    0,
-          sign:     1
         },
     // settings is defaults combined with user options
     settings = {},
+    // rows is an Array of Arrays, serving as a model of the table
     rows = [],
     $table = $( table ),
     $headercells = $( table ).find( '.sortable' );
@@ -28,6 +28,8 @@
     function _init( options ) {
       settings = $.extend( {}, defaults, options );
       _clickHandler();
+      // If the following classes exist, start by sorting those columns.
+      $table.find( '.sorter_up, .sorter_down' ).click();
     };
 
     /**
@@ -46,11 +48,13 @@
         a = a[0];
         b = b[0];
 
-        // For integer sort, convert a & b to integers.
-        if ( sortType === 'int' ) {
-          a = a.parseInt( a );
-          b = b.parseInt( b );
+        // For number sort, convert a & b to numbers.
+        if ( sortType === 'number' ) {
+          a = Number( a.replace(/[^\d.-]/g, '') );
+          b = Number( b.replace(/[^\d.-]/g, '') );
         }
+
+        console.log( a, b );
 
         // Sort the values
         if ( a < b ) {
@@ -65,11 +69,13 @@
 
     /**
      * Updates internal model of table (rows[])
-     * No parameters - uses and updates SortableTable properties.
+     * @param { index } - The index of the column used for sorting, which is
+     * used as the "key" for rows[] - it is set as the only value in the first
+     * array.
      */
-    function _getRows() {
+    function _getRows( index ) {
       // Clear the model
-      rows.empty();
+      rows.length = 0;
       // Find the value in each row of the column we're sorting by,
       // add it to the rows Array
       $table.find( 'tbody tr' ).each( function() {
@@ -84,7 +90,7 @@
      * Updates the table in the DOM
      * @param { index } - The index of the column used for sorting
      */
-    function _updateTable() {
+    function _updateTable( index ) {
       // Empty the tbody to prepare for sorted rows
       $table.find( 'tbody' ).empty();
 
@@ -100,17 +106,25 @@
      */
     function _clickHandler() {
       $headercells.on( 'click', function() {
-        var flag = $( this ).attr( 'data-sort_type' ),
+        var sortType = $( this ).attr( 'data-sort_type' ),
+            sign = 1,
             index = $table.find('tr:first-child').children( 'th, td' ).index( $( this ) );
 
-        _getRows();
+        _getRows( index );
 
         // For reverse sorting, reverse the sign
         if ( $(this).hasClass( 'sorted_up' ) === true ) {
           sign = -1;
+          $( '.sortable' ).removeClass( 'sorted_up sorted_down' );
+          $( this ).addClass( 'sorted_down' );
+        }
+        else {
+          $( '.sortable' ).removeClass( 'sorted_up sorted_down' );
+          $( this ).addClass( 'sorted_up' );
         }
 
-        rows.sort( _arraySorter( sign, flag ) );
+        // Perform the row sort
+        rows.sort( _arraySorter( sign, sortType ) );
 
         _updateTable( index );
 
@@ -137,4 +151,4 @@
   });
 
 
-}( window.jQuery ));
+}( jQuery ));
