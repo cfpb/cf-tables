@@ -1,11 +1,13 @@
 {
-  "name": "cf-",
-  "version": "1.7.1",
-  "description": "",
+  "name": "cf-tables",
+  "version": "1.0.0",
+  "description": "Tables component of Capital Framework",
   "keywords": [
     "capital-framework",
     "capital",
-    "less"
+    "less",
+    "jquery",
+    "js"
   ],
   "authors": [
     {
@@ -13,15 +15,16 @@
       "url": "https://cfpb.github.io/"
     }
   ],
-  "homepage": "https://github.com/cfpb/cf-",
+  "homepage": "https://github.com/cfpb/cf-tables",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cfpb/cf-.git"
+    "url": "https://github.com/cfpb/cf-tables.git"
   },
-  "license": "https://github.com/cfpb/cf-/blob/gh-pages/TERMS.md",
-  "main": "src/cf-.less",
+  "license": "https://github.com/cfpb/cf-tables/blob/gh-pages/TERMS.md",
+  "main": "src/cf-tables.less",
   "dependencies": {
-    "cf-core": "^1.0.0"
+    "cf-core": "^1.0.0",
+    "jquery": "~1.11.0"
   },
   "exportsOverride": {
     "cf-*": {
@@ -30,5 +33,8 @@
       "fonts": "src/fonts/*.*",
       "js": "src/**/*.js"
     }
+  },
+  "devDependencies": {
+    "qunit": "~1.19.0"
   }
 }

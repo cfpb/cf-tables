@@ -75,20 +75,54 @@
           </tbody>
         </table>
       notes:
-        - Uses .table__striped class
+        - Uses '.table__striped' class
+    - name: Standard Table with "Small Screen Stacked with Entry Header" Variation
+      markup: |
+        <table class="table table__small_entry-header">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td>Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td>Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td>Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__small_entry-header' class
   tags:
     - cf-tables
 */
 
 // Color variables
-
-// .table
-
 @table__head-bg:              #f8f8f8;
 @table__cell-bg:              #ffffff;
 @table__cell-bg_alt:          #f8f8f8;
 @table__scrolling-border:     #e3e4e5;
 @table__border:               #babbbd;
+
+// .table
 
 table {
     .table__right-align {
@@ -111,7 +145,30 @@ table.table__striped tbody > tr:nth-child(even) {
     }
 }
 
-.respond-to-max(640px, {
+table.table__sortable {
+    .sortable:after {
+        display: inline-block;
+        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC);
+        position: relative;
+        top: -1px;
+        visibility: hidden;
+    }
+
+    .sortable:hover:after,
+    .sortable.sorted:after {
+        visibility: visible;
+    }
+
+    .sortable.sorted:hover:after {
+        -ms-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+}
+
+.respond-to-max( @mobile-max, {
     table.table__striped tbody > tr:nth-child(even) {
         & > th,
         & > td {
@@ -163,6 +220,8 @@ table.table__striped tbody > tr:nth-child(even) {
         }
     }
 });
+
+// 
 
 
 /* topdoc

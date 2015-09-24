@@ -1,7 +1,7 @@
 {
   "scripts": {
     "pretest": "forever stopall -s && forever start -s ./node_modules/.bin/http-server",
-    "test": "pa11y localhost:8080/demo -s WCAG2AA && npm run coverage",
+    "test": "grunt test && pa11y localhost:8080/demo -s WCAG2AA && npm run coverage",
     "posttest": "forever stopall -s",
     "coverage": "./coverage.sh"
   },

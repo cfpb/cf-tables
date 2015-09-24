@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CF Tables jQuery Plugin Test Suite</title>
+    <link rel="stylesheet" href="../demo/static/css/main.css">
+    <link rel="stylesheet" href="../src/vendor/qunit/qunit.css" media="screen">
+</head>
+<body>
+
+    <div id="qunit"></div>
+    <!--
+         We can't use qunit-fixture in this scenario, more info here:
+         http://stackoverflow.com/questions/16800739/qunit-test-alternates-between-pass-and-fail-on-page-refresh
+     -->
+    <!-- <div id="qunit-fixture"> -->
+    <table class="table__sortable">
+      <thead>
+          <tr>
+              <th>
+                  Agency
+              </th>
+              <th class="sortable-table_header">
+                  Languages
+                  <div class="sorter">
+                      <a href="#" class="sorter_up"><span class="cf-icon cf-icon-up"></span></a>
+                      <a href="#" class="sorter_down"><span class="cf-icon cf-icon-down"></span></a>
+                  </div>
+              </th>
+              <th class="sortable-table_header">
+                  Distance
+                  <div class="sorter">
+                      <a href="#" class="sorter_up"><span class="cf-icon cf-icon-up"></span></a>
+                      <a href="#" class="sorter_down sorter__active"><span class="cf-icon cf-icon-down"></span></a>
+                  </div>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+            <td>
+                Kilo Housing Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                0.6 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mike Housing Center
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.2 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                November Housing Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                1.4 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Oscar Housing Authority
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.6 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mike's Community Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                1.6 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Housing Assistance of Quebec
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.8 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Lima Community Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                0.7 mi
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <!-- </div> -->
+
+    <script src="../src/vendor/jquery/dist/jquery.js"></script>
+    <script src="../src/vendor/jquery.easing/js/jquery.easing.js"></script>
+    <script src="../src/vendor/qunit/qunit/qunit.js"></script>
+    <!-- Load local lib and tests. -->
+    <script src="../src/js/cf-tables.js"></script>
+    <script src="cf-tables.js"></script>
+    <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+    you REALLY want to mess around with jQuery in the console. REMEMBER WE
+    ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+    <script>window._$ = jQuery.noConflict(true);</script>
+</body>
+</html>

@@ -9,13 +9,115 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>cf- demo</title>
+    <title>cf-tables demo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
 <!--[if lt IE 8]>
     <link rel="stylesheet" type="text/css" href="static/css/main.lt-ie8.min.css"><![endif]-->
   </head>
   <body style="padding:4px;">
+    <div id="tables">
+      <div>
+        <div>
+<table>
+    <thead>
+        <tr>
+            <th>Column 1 header</th>
+            <th>Column 2 header</th>
+            <th>Column 3 header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Row 1 header</th>
+            <td>Row 1, column 2</td>
+            <td>Row 1, column 3</td>
+        </tr>
+        <tr>
+            <th>Row 2 header</th>
+            <td>Row 2, column 2</td>
+            <td>Row 2, column 3</td>
+        </tr>
+        <tr>
+            <th>Row 3 header</th>
+            <td>Row 3, column 2</td>
+            <td>Row 3, column 3</td>
+        </tr>
+    </tbody>
+</table>
+</div><br>
+      </div>
+      <div>
+        <div>
+<table class="table table__striped">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+</div><br>
+      </div>
+      <div>
+        <div>
+<table class="table table__small_entry-header">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td>Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td>Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td>Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+</div><br>
+      </div>
+    </div>
     <div id="custom-demo">
 <h1>Standard Table</h1>
 
@@ -80,6 +182,40 @@
     </tr>
     <tr>
       <td data-label="Column 1">Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Standard Table with "Small Screen Stacked" Variation</h1>
+
+<table class="table table__small_stacked">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td>Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td>Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td>Row D</td>
       <td data-label="Column 2">Cell D2</td>
       <td data-label="Column 3">Cell D3</td>
     </tr>
@@ -215,7 +351,113 @@
     </tr>
   </tbody>
 </table>
+
+
+<table class="table table__sortable">
+    <thead>
+        <tr>
+            <th>
+                Agency
+            </th>
+            <th class="sortable">
+                Languages
+            </th>
+            <th class="sortable">
+                Distance
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                Kilo Housing Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                0.6 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mike Housing Center
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.2 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                November Housing Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                1.4 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Oscar Housing Authority
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.6 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mike's Community Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                1.6 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Housing Assistance of Quebec
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.8 mi
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Lima Community Center
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                0.7 mi
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
 <!-- Place your demo HTML content in custom.html -->
 </div>
+    <script src="static/js/component.min.js"></script>
   </body>
 </html>

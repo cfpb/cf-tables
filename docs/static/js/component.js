@@ -30,10 +30,11 @@ module.exports = function(grunt) {
 
     // Define a couple of utility variables that may be used in task options.
     pkg: grunt.file.readJSON('bower.json'),
+    env: process.env,
     opt: {
       // Include path to compiled extra CSS for IE7 and below.
       // Definitely needed if this component depends on an icon font.
-      ltIE8Source: 'static/css/main.lt-ie8.min.css',
+      // ltIE8Source: 'static/css/main.lt-ie8.min.css',
 
       // Include path to compiled alternate CSS for IE8 and below.
       // Definitely needed if this component depends on media queries.
@@ -41,7 +42,7 @@ module.exports = function(grunt) {
 
       // Set whether or not to include html5shiv for demoing a component.
       // Only necessary if component patterns include new HTML5 elements
-      // html5Shiv: false,
+      html5Shiv: true,
 
       // Set whether you'd like to use a JS hack to force a redraw in the browser
       // to avoid an IE8 bug where fonts do not appear or appear as boxes on load.
@@ -49,15 +50,27 @@ module.exports = function(grunt) {
 
       // Set a path to a concatenated JS file that you'd like to add before the
       // closing body tag.
-      jsBody: 'static/js/component.min.js',
+      // jsBody: 'static/js/component.min.js',
 
       // Here's a banner with some template variables.
       // We'll be inserting it at the top of minified assets.
       banner: grunt.file.read('./node_modules/cf-grunt-config/cfpb-banner.txt'),
     },
-    env: process.env,
 
     // Define tasks specific to this project here
+    less: {
+      core: {
+        options: {
+          paths: grunt.file.expand('src/**'),
+          sourceMap: true
+        },
+        files: {
+          'demo/static/css/main.css': [
+            'src/cf-core.less'
+          ]
+        }
+      }
+    },
 
   };
 
@@ -100,8 +113,83 @@ module.exports = function(grunt) {
   /**
    * Create custom task aliases for our component build workflow.
    */
-  grunt.registerTask('test', ['jshint', 'connect', 'qunit']);
-  grunt.registerTask('vendor', ['copy:docs_assets', 'concat:lt-ie8']);
-  grunt.registerTask('default', ['concat:lt-ie8', 'less', 'autoprefixer', 'copy:docs', 'topdoc']);
+  grunt.registerTask('vendor', ['copy:component_assets', 'copy:docs_assets']);
+  grunt.registerTask('default', ['less:core', 'autoprefixer', 'copy:docs', 'topdoc']);
 
 };
+
+
+/**
+ * cf-tables
+ * https://github.com/cfpb/cf-tables
+ *
+ * A public domain work of the Consumer Financial Protection Bureau
+ */
+
+(function( $ ) {
+
+  $.fn.sortableTable = function( settings ) {
+    return $( this ).each( function() {
+      var $sorters = $( this ).find( '.sorter a' ),
+          $table = $( this ).closest( '.table__sortable' ),
+          $cell = $( this ).closest( 'th' ),
+          $row = $( this ).closest( 'tr' );
+          index = $row.children( 'th, td' ).index( $cell ),
+          rows = [], // Array-of-Arrays for sorting
+          sign = 1; // for reverse-sorting
+
+      $sorters.click( function() {
+        $table.find( 'tbody tr' ).each( function() {
+          // Find the value of the cell we're sorting by, add it to the Array
+          var child = index + 1, // indices count from 0, but nth-child counts from 1
+              key = $( this ).find( 'td:nth-child(' + child + ')' ).text().trim();
+          rows.push( [key, $( this )] );
+        });
+
+        // For reverse sorting, reverse the sign
+        if ( $(this).hasClass( 'sorter_down' ) === true ) {
+          sign = -1;
+        }
+
+        rows.sort( function( a, b ) {
+          // Set a and b to the first Array in each Array-of-Arrays
+          a = a[0];
+          b = b[0];
+
+          // For integer sort, convert a & b to integers.
+          if ( $( this ).hasClass( '.sorter__int' ) ) {
+            a = a.parseInt( a );
+            b = b.parseInt( b );
+          }
+
+          // Sort the values
+          if ( a < b ) {
+            return sign * -1;
+          }
+          else {
+            if ( a > b ) {
+              return sign;
+            }
+            else {
+              return 0;
+            }
+          }
+        });
+
+        // Empty the tbody to prepare for sorted rows
+        $table.find( 'tbody' ).empty();
+
+        // Insert sorted rows
+        for( var i = 0; i < rows.length; i++ ) {
+          $table.find( 'tbody' ).append( rows[i][1] );
+        }
+
+      });
+
+    });
+  }
+
+  // Auto init
+  $('.table__sortable').sortableTable();
+
+}(jQuery));
