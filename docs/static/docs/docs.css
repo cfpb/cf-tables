@@ -588,6 +588,7 @@ input[type="radio"] {
           @link-underline-hover
           @link-text-active
           @link-underline-active
+          @table-border
           @thead-text
           @thead-bg
           @td-bg
@@ -1892,52 +1893,22 @@ ul {
             </thead>
             <tbody>
                 <tr>
-                    <th>Row 1 header</th>
+                    <td>Row 1, column 1</td>
                     <td>Row 1, column 2</td>
                     <td>Row 1, column 3</td>
                 </tr>
                 <tr>
-                    <th>Row 2 header</th>
+                    <td>Row 2, column 1</td>
                     <td>Row 2, column 2</td>
                     <td>Row 2, column 3</td>
                 </tr>
                 <tr>
-                    <th>Row 3 header</th>
+                    <td>Row 3, column 1</td>
                     <td>Row 3, column 2</td>
                     <td>Row 3, column 3</td>
                 </tr>
             </tbody>
         </table>
-    - name: Compact table
-      markup: |
-        <table class="compact-table">
-            <thead>
-                <tr>
-                    <th>Column 1 header</th>
-                    <th>Column 2 header</th>
-                    <th>Column 3 header</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Row 1 header</th>
-                    <td>Row 1, column 2</td>
-                    <td>Row 1, column 3</td>
-                </tr>
-                <tr>
-                    <th>Row 2 header</th>
-                    <td>Row 2, column 2</td>
-                    <td>Row 2, column 3</td>
-                </tr>
-                <tr>
-                    <th>Row 3 header</th>
-                    <td>Row 3, column 2</td>
-                    <td>Row 3, column 3</td>
-                </tr>
-            </tbody>
-        </table>
-      notes:
-        - Reduces cell padding to 10px.
   tags:
     - cf-core
 */
@@ -1968,30 +1939,29 @@ table b {
 }
 th,
 td {
-  padding: 0.75em 0.9375em;
-  background: #eee4ed;
+  padding: 0.625em;
 }
 thead th,
 thead td {
-  color: #ffffff;
-  background: #5b3b57;
-}
-tbody > tr:nth-child(odd) > th,
-tbody > tr:nth-child(odd) > td {
-  background: #f4edf3;
-}
-.compact-table th,
-.compact-table td {
-  padding: 0.4375em 0.625em;
-}
-th {
+  color: #000000;
+  background: #f8f8f8;
   font-family: Arial, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
-  text-align: left;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
 }
-.lt-ie9 th {
+.lt-ie9 thead th,
+.lt-ie9 thead td {
   font-weight: normal !important;
+}
+thead,
+tbody tr {
+  border-bottom: 1px solid #babbbd;
 }
 /* topdoc
   name: Block quote

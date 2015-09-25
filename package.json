@@ -6,7 +6,7 @@
     "coverage": "./coverage.sh"
   },
   "devDependencies": {
-    "cf-component-demo": "^1.0.0",
+    "cf-component-demo": "^1.0.1",
     "cf-grunt-config": "^1.0.1",
     "coveralls": "^2.11.3",
     "forever": "^0.15.1",
