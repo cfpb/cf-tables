@@ -23,7 +23,7 @@
   "license": "https://github.com/cfpb/cf-tables/blob/gh-pages/TERMS.md",
   "main": "src/cf-tables.less",
   "dependencies": {
-    "cf-core": "^1.0.0",
+    "cf-core": "^1.0.3",
     "jquery": "~1.11.0"
   },
   "exportsOverride": {
