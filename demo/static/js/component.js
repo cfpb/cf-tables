@@ -10381,7 +10381,7 @@ return jQuery;
       settings = $.extend( {}, defaults, options );
       _clickHandler();
       // If the following classes exist, start by sorting those columns.
-      $table.find( '.sorter_up, .sorter_down' ).click();
+      $table.find( '.sortable__start-up, .sortable__start-up' ).click();
     }
 
     /**
@@ -10462,6 +10462,17 @@ return jQuery;
 
         _getRows( index );
 
+        // Handle .sortable__start-* classes
+        if ( $(this).hasClass( 'sortable__start-up' ) === true ) {
+          // Simply add the opposing sort class
+          $(this).addClass( 'sorted_down' );
+        }
+        else if ( $(this).hasClass( 'sortable__start-down' ) === true ) {
+          // Simply add the opposing sort class
+          $(this).addClass( 'sorted_up' );
+        }
+        $(this).removeClass( 'sortable__start-down sortable__start-up' );
+
         // For reverse sorting, reverse the sign
         if ( $(this).hasClass( 'sorted_up' ) === true ) {
           sign = -1;
@@ -10491,7 +10502,6 @@ return jQuery;
   $.fn.sortableTable = function( options ) {
     return this.each( function() {
       ( options || ( options = {} ) ).$element = $( this );
-      // SortableTable.init.call( this, options );
       var scol = new SortableTable( this, options );
     });
   };

@@ -27,6 +27,22 @@
     }
   });
 
+  test( '".sortable__start-up class sorts on load', function() {
+    expect( 3 );
+    ok(
+      $('#test-one tbody tr:nth-child(1) td:nth-child(3)').text().trim() === '1.2 mi',
+      'Row 1 is correct'
+    );
+    ok(
+      $('#test-one tbody tr:nth-child(5) td:nth-child(3)').text().trim() === '2.6 mi',
+      'Row 3 is correct'
+    );
+    ok(
+      $('#test-one tbody tr:nth-child(7) td:nth-child(3)').text().trim() === '11.1 mi',
+      'Row 7 is correct'
+    );
+  });
+
   test( 'Column sorts low-to-high on click ', function() {
     expect( 3 );
     $('#lang-sort').click();
