@@ -139,7 +139,6 @@
   $.fn.sortableTable = function( options ) {
     return this.each( function() {
       ( options || ( options = {} ) ).$element = $( this );
-      // SortableTable.init.call( this, options );
       var scol = new SortableTable( this, options );
     });
   };
