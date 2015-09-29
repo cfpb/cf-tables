@@ -13,7 +13,7 @@
   name: Tables
   family: cf-tables
   patterns:
-    - name: Standard table (inherited from cf-core)
+    - name: Table base style (inherited from cf-core)
       markup: |
         <table>
             <thead>
@@ -41,9 +41,146 @@
                 </tr>
             </tbody>
         </table>
+      notes:
+        - "The table is not responsive without adding one of the 'small screen'
+            classes below."
+    - name: Small screen base style - "stacked"
+      markup: |
+        <table class="table__small_stacked">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Column 1">Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__small_entry-header' class
+    - name: Small screen variation - "stacked with entry header"
+      markup: |
+        <table class="table__small_entry-header">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Column 1">Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__small_entry-header' class
+    - name: Small screen variation - "Comparative with horizontal scroll"
+      markup: |
+        <div class="table-wrapper__scrolling">
+          <table>
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+                <th>Column 6</th>
+                <th>Column 7</th>
+                <th>Column 8</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Column 1">Row A</td>
+                <td data-label="Column 2">Cell A2</td>
+                <td data-label="Column 3">Cell A3</td>
+                <td data-label="Column 4">Cell A4</td>
+                <td data-label="Column 5">Cell A5</td>
+                <td data-label="Column 6">Cell A6</td>
+                <td data-label="Column 7">Cell A7</td>
+                <td data-label="Column 8">Cell A8</td>
+              </tr>
+              <tr>
+                <td data-label="Column 1">Row B</td>
+                <td data-label="Column 2">Cell B2</td>
+                <td data-label="Column 3">Cell B3</td>
+                <td data-label="Column 4">Cell B4</td>
+                <td data-label="Column 5">Cell B5</td>
+                <td data-label="Column 6">Cell B6</td>
+                <td data-label="Column 7">Cell B7</td>
+                <td data-label="Column 8">Cell B8</td>
+              </tr>
+              <tr>
+                <td data-label="Column 1">Row C</td>
+                <td data-label="Column 2">Cell C2</td>
+                <td data-label="Column 3">Cell C3</td>
+                <td data-label="Column 4">Cell C4</td>
+                <td data-label="Column 5">Cell C5</td>
+                <td data-label="Column 6">Cell C6</td>
+                <td data-label="Column 7">Cell C7</td>
+                <td data-label="Column 8">Cell C8</td>
+              </tr>
+              <tr>
+                <td data-label="Column 1">Row D</td>
+                <td data-label="Column 2">Cell D2</td>
+                <td data-label="Column 3">Cell D3</td>
+                <td data-label="Column 4">Cell D4</td>
+                <td data-label="Column 5">Cell D5</td>
+                <td data-label="Column 6">Cell D6</td>
+                <td data-label="Column 7">Cell D7</td>
+                <td data-label="Column 8">Cell D8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      notes:
+        - "Must be wrapped in an element (DIV, in most cases) with the
+          'table-wrapper__scrolling' class"
+        - The TABLE element does not need additional markup in this case
     - name: Standard table, with stripes
       markup: |
-        <table class="table table__striped">
+        <table class="table__striped">
           <thead>
             <tr>
               <th>Column 1</th>
@@ -76,79 +213,10 @@
         </table>
       notes:
         - Uses '.table__striped' class
-    - name: Standard Table with "Small Screen Stacked" Variation
-      markup: |
-        <table class="table table__small_stacked">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Row A</td>
-              <td data-label="Column 2">Cell A2</td>
-              <td data-label="Column 3">Cell A3</td>
-            </tr>
-            <tr>
-              <td>Row B</td>
-              <td data-label="Column 2">Cell B2</td>
-              <td data-label="Column 3">Cell B3</td>
-            </tr>
-            <tr>
-              <td>Row C</td>
-              <td data-label="Column 2">Cell C2</td>
-              <td data-label="Column 3">Cell C3</td>
-            </tr>
-            <tr>
-              <td>Row D</td>
-              <td data-label="Column 2">Cell D2</td>
-              <td data-label="Column 3">Cell D3</td>
-            </tr>
-          </tbody>
-        </table>
-      notes:
-        - Uses '.table__small_entry-header' class
-    - name: Standard Table with "Small Screen Stacked with Entry Header" Variation
-      markup: |
-        <table class="table table__small_entry-header">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Row A</td>
-              <td data-label="Column 2">Cell A2</td>
-              <td data-label="Column 3">Cell A3</td>
-            </tr>
-            <tr>
-              <td>Row B</td>
-              <td data-label="Column 2">Cell B2</td>
-              <td data-label="Column 3">Cell B3</td>
-            </tr>
-            <tr>
-              <td>Row C</td>
-              <td data-label="Column 2">Cell C2</td>
-              <td data-label="Column 3">Cell C3</td>
-            </tr>
-            <tr>
-              <td>Row D</td>
-              <td data-label="Column 2">Cell D2</td>
-              <td data-label="Column 3">Cell D3</td>
-            </tr>
-          </tbody>
-        </table>
-      notes:
-        - Uses '.table__small_entry-header' class
+        - Striping is not visible by default on small screens
     - name: Sortable Table
       markup: |
-        <table class="table table__sortable">
+        <table class="table__sortable">
             <thead>
                 <tr>
                     <th>
@@ -276,16 +344,21 @@ table {
 
 .table-wrapper__scrolling {
     box-sizing: border-box;
-    border: 1px solid @table__scrolling-border;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
+    table {
+        border: 1px solid @table__scrolling-border;
+        .table__striped();
+    }
 }
 
-table.table__striped tbody > tr:nth-child(even) {
-    & > th,
-    & > td {
-        background: @table__cell-bg_alt;
+.table__striped {
+    tbody > tr:nth-child(even) {
+        & > th,
+        & > td {
+            background: @table__cell-bg_alt;
+        }
     }
 }
 
@@ -321,13 +394,13 @@ table.table__sortable {
 }
 
 .respond-to-max( @mobile-max, {
-    table.table__striped tbody > tr:nth-child(even) {
+    .table__striped tbody > tr:nth-child(even) {
         & > th,
         & > td {
             background: @table__cell-bg;
         }
     }
-    table.table__small_stacked {
+    .table__small_stacked {
         tr,
         td {
             display: block;
@@ -346,7 +419,8 @@ table.table__sortable {
             content: attr(data-label);
         }
     }
-    table.table__small_entry-header {
+    .table__small_entry-header {
+        .table__small_stacked();
         tbody td:first-child {
             margin-top: 0;
             margin-bottom: 1.16666667em;
@@ -358,18 +432,15 @@ table.table__sortable {
             margin-bottom: 10px;
             border-bottom: 1px solid @table__border;
         }
+        tbody td:first-child:before {
+            display: none;
+        }
         tbody tr {
             border-bottom: none;
         }
     }
-    table-wrapper__scrolling .table {
-        thead {
-            display: block;
-        }
-        td,
-        th {
-            display: table-cell;
-        }
+    .table-wrapper__scrolling table {
+
     }
 });
 

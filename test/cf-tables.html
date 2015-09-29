@@ -14,115 +14,100 @@
          http://stackoverflow.com/questions/16800739/qunit-test-alternates-between-pass-and-fail-on-page-refresh
      -->
     <!-- <div id="qunit-fixture"> -->
-    <table class="table__sortable">
-      <thead>
-          <tr>
-              <th>
-                  Agency
-              </th>
-              <th class="sortable-table_header">
-                  Languages
-                  <div class="sorter">
-                      <a href="#" class="sorter_up"><span class="cf-icon cf-icon-up"></span></a>
-                      <a href="#" class="sorter_down"><span class="cf-icon cf-icon-down"></span></a>
-                  </div>
-              </th>
-              <th class="sortable-table_header">
-                  Distance
-                  <div class="sorter">
-                      <a href="#" class="sorter_up"><span class="cf-icon cf-icon-up"></span></a>
-                      <a href="#" class="sorter_down sorter__active"><span class="cf-icon cf-icon-down"></span></a>
-                  </div>
-              </th>
-          </tr>
-      </thead>
-      <tbody>
-
-        <tr>
-            <td>
-                Kilo Housing Center
-            </td>
-            <td data-label="Languages">
-                English
-            </td>
-            <td data-label="Distance">
-                0.6 mi
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Mike Housing Center
-            </td>
-            <td data-label="Languages">
-                English, Spanish
-            </td>
-            <td data-label="Distance">
-                1.2 mi
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                November Housing Center
-            </td>
-            <td data-label="Languages">
-                English
-            </td>
-            <td data-label="Distance">
-                1.4 mi
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Oscar Housing Authority
-            </td>
-            <td data-label="Languages">
-                English, Spanish
-            </td>
-            <td data-label="Distance">
-                1.6 mi
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Mike's Community Center
-            </td>
-            <td data-label="Languages">
-                English
-            </td>
-            <td data-label="Distance">
-                1.6 mi
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Housing Assistance of Quebec
-            </td>
-            <td data-label="Languages">
-                English, Spanish
-            </td>
-            <td data-label="Distance">
-                1.8 mi
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Lima Community Center
-            </td>
-            <td data-label="Languages">
-                English
-            </td>
-            <td data-label="Distance">
-                0.7 mi
-            </td>
-        </tr>
-      </tbody>
-    </table>
+            <table id="test-one" class="table__sortable">
+            <thead>
+                <tr>
+                    <th>
+                        Agency
+                    </th>
+                    <th class="sortable" id="lang-sort">
+                        Languages
+                    </th>
+                    <th class="sortable" id="dist-sort" data-sort_type="number">
+                        Distance
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Alpha
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        2.6 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Beta
+                    </td>
+                    <td data-label="Languages">
+                        English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        1.4 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gamma
+                    </td>
+                    <td data-label="Languages">
+                        English, French, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        1.4 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Delta
+                    </td>
+                    <td data-label="Languages">
+                        English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        3.2 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Epsilon
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        1.6 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      Zeta
+                    </td>
+                    <td data-label="Languages">
+                      English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                      1.2 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Eta
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        11.1 mi
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
 
 
