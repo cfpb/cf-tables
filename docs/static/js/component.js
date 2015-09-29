@@ -10382,7 +10382,7 @@ return jQuery;
       _clickHandler();
       // If the following classes exist, start by sorting those columns.
       $table.find( '.sorter_up, .sorter_down' ).click();
-    };
+    }
 
     /**
        * Sorting function for Array.sort()
@@ -10405,8 +10405,6 @@ return jQuery;
           a = Number( a.replace(/[^\d.-]/g, '') );
           b = Number( b.replace(/[^\d.-]/g, '') );
         }
-
-        console.log( a, b );
 
         // Sort the values
         if ( a < b ) {
@@ -10481,7 +10479,7 @@ return jQuery;
         _updateTable( index );
 
       });
-    };
+    }
 
     _init( options );
 
@@ -10496,7 +10494,7 @@ return jQuery;
       // SortableTable.init.call( this, options );
       var scol = new SortableTable( this, options );
     });
-  }
+  };
 
   $( document ).ready( function() {
     $( '.table__sortable' ).sortableTable();    
