@@ -25,25 +25,27 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Row 1 header</th>
+                    <td>Row 1, column 1</td>
                     <td>Row 1, column 2</td>
-                    <td>Row 1, column 3</td>
+                    <td class="table__right-align">13</td>
                 </tr>
                 <tr>
-                    <th>Row 2 header</th>
+                    <td>Row 2, column 1</td>
                     <td>Row 2, column 2</td>
-                    <td>Row 2, column 3</td>
+                    <td class="table__right-align">23</td>
                 </tr>
                 <tr>
-                    <th>Row 3 header</th>
+                    <td>Row 3, column 1</td>
                     <td>Row 3, column 2</td>
-                    <td>Row 3, column 3</td>
+                    <td class="table__right-align">33</td>
                 </tr>
             </tbody>
         </table>
       notes:
         - "The table is not responsive without adding one of the 'small screen'
             classes below."
+        - "The use of the '.table__right-align' class on a TD aligns the text
+            right - see the third column above"
     - name: Small screen base style - "stacked"
       markup: |
         <table class="table__small_stacked">
@@ -320,11 +322,34 @@
           the table's header through sorting operations"
         - "Any TH with the '.sortable' class can also be given the 'data-sort_type'
           attribute"
-        - By default, the column values will be sorted as strings.
+        - "In the table example above, Distance is sorted by Number value. See below for
+          the 'data-sort_type' modifier."
+        - "In the table example above, Distance is sorted low-to-high on page load by using
+          the 'sortable__start-up' class in the TH. See the 'sortable__start-up' and
+          'sortable__start-down' modifiers below."
+    - name: data-sort_type (modifier)
+      codenotes:
+        - |
+          <table class="table__sortable">
+            ...
+              <th class="sortable" data-sort_type="number">Column Name</th>
+            ...
+          </table>
+      notes:
         - "By setting the 'data-sort_type' attribute to 'number', the column is sorted by
-          Number value (see Distance in the example table above)."
+          Number value"
+        - "By default, columns will be sorted as strings."
+    - name: .sortable__start-up, .sortable__start-down (modifiers)
+      codenotes:
+        - |
+          <table class="table__sortable">
+            ...
+              <th class="sortable sortable__start-up">Column Name</th>
+            ...
+          </table>
+      notes:
         - "To sort the table on page load, use the '.sortable__start-up' and '.sortable__start-down'
-          classes. See the Distance column in the sample code."
+          classes."
   tags:
     - cf-tables
 */
