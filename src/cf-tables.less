@@ -445,6 +445,9 @@ table.table__sortable {
             display: block;
             content: attr(data-label);
         }
+        td:last-child {
+          margin-bottom: unit( 30px / @base-font-size-px, em );
+        }
     }
     .table__small_entry-header {
         .table__small_stacked();
@@ -456,7 +459,7 @@ table.table__sortable {
             line-height: 1.22222222;
             background-color: @table__head-bg;
             padding-bottom: .75em;
-            margin-bottom: 10px;
+            margin-bottom: unit( 10px / @base-font-size-px, em);
             border-bottom: 1px solid @table__border;
         }
         tbody td:first-child:before {
@@ -464,6 +467,7 @@ table.table__sortable {
         }
         tbody tr {
             border-bottom: none;
+            margin-bottom: unit( 30px / @base-font-size-px, em );
         }
     }
     .table-wrapper__scrolling table {
