@@ -12,14 +12,13 @@
   var SortableTable = function( table, options ) {
     /*  At the moment, there are no default settings, but here's an object
         for their future use! */
-    var defaults = {
-        },
+    var defaults = {},
     // settings is defaults combined with user options
     settings = {},
     // rows is an Array of Arrays, serving as a model of the table
     rows = [],
     $table = $( table ),
-    $headercells = $( table ).find( '.sortable' );
+    $headercells = $table.find( '.sortable' );
 
     /**
      * Initializes the SortableTable
