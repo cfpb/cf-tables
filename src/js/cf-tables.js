@@ -73,14 +73,14 @@
      * in the first array.
      */
     function _getRows( index ) {
+      var child = index + 1;
       // Clear the model
       rows.length = 0;
       // Find the value in each row of the column we're sorting by,
       // add it to the rows Array
       $table.find( 'tbody tr' ).each( function() {
         // indices count from 0, but nth-child counts from 1
-        var child = index + 1,
-            key = $( this ).find( 'td:nth-child(' + child + ')' ).text().trim();
+        var key = $( this ).find( 'td:nth-child(' + child + ')' ).text().trim();
         rows.push( [ key, $( this ) ] );
       } );
     }
