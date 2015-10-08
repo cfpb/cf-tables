@@ -32,14 +32,16 @@
     }
 
     /**
-       * Sorting function for Array.sort()
-       *
-       * @param { number } sign - A number where a negative number indicates a
-       * reverse sort.
-       * @param { sortType } sortType - A string used for options such as integer sorting
-       * @returns function - A function to be used by the Array.sort method, where
-       * the parameters 'a' and 'b' is each an Array (of Arrays) to be sorted
-       */
+     * Sorting function for Array.sort()
+     *
+     * @param { number } sign - A number where a negative number indicates a
+     * reverse sort.
+     * @param { sortType } sortType - A string used for sort types. By default,
+     * the values are sorted by their native type. If this value is set to
+     * 'number', then the cells' numeric values are used.
+     * @returns function - A function to be used by the Array.sort method, where
+     * the parameters 'a' and 'b' is each an Array (of Arrays) to be sorted
+     */
 
     function _arraySorter( sign, sortType ) {
       return function( a, b ) {
@@ -49,8 +51,8 @@
 
         // For number sort, convert a & b to numbers.
         if ( sortType === 'number' ) {
-          a = Number( a.replace(/[^\d.-]/g, '') );
-          b = Number( b.replace(/[^\d.-]/g, '') );
+          a = Number( a.replace( /[^\d.-]/g, '' ) );
+          b = Number( b.replace( /[^\d.-]/g, '' ) );
         }
 
         // Sort the values
@@ -66,9 +68,9 @@
 
     /**
      * Updates internal model of table (rows[])
-     * @param { index } - The index of the column used for sorting, which is
-     * used as the "key" for rows[] - it is set as the only value in the first
-     * array.
+     * @param { number } index - The index of the column used for sorting,
+     * which is used as the "key" for rows[] - it is set as the only value
+     * in the first array.
      */
     function _getRows( index ) {
       // Clear the model
@@ -79,20 +81,20 @@
         // indices count from 0, but nth-child counts from 1
         var child = index + 1,
             key = $( this ).find( 'td:nth-child(' + child + ')' ).text().trim();
-        rows.push( [key, $( this )] );
-      });
+        rows.push( [ key, $( this ) ] );
+      } );
     }
 
     /**
      * Updates the table in the DOM
-     * @param { index } - The index of the column used for sorting
+     * @param { number } index - The index of the column used for sorting
      */
     function _updateTable( index ) {
       // Empty the tbody to prepare for sorted rows
       $table.find( 'tbody' ).empty();
 
       // Insert sorted rows
-      for( var i = 0; i < rows.length; i++ ) {
+      for ( var i = 0; i < rows.length; i++ ) {
         $table.find( 'tbody' ).append( rows[i][1] );
       }
     }
@@ -105,28 +107,27 @@
       $headercells.on( 'click', function() {
         var sortType = $( this ).attr( 'data-sort_type' ),
             sign = 1,
-            index = $table.find('tr:first-child').children( 'th, td' ).index( $( this ) );
+            $firstChild = $table.find( 'tr:first-child' ),
+            index = $firstChild.children( 'th, td' ).index( $( this ) );
 
         _getRows( index );
 
         // Handle .sortable__start-* classes
-        if ( $(this).hasClass( 'sortable__start-up' ) === true ) {
+        if ( $( this ).hasClass( 'sortable__start-up' ) === true ) {
           // Simply add the opposing sort class
-          $(this).addClass( 'sorted_down' );
-        }
-        else if ( $(this).hasClass( 'sortable__start-down' ) === true ) {
+          $( this ).addClass( 'sorted_down' );
+        } else if ( $( this ).hasClass( 'sortable__start-down' ) === true ) {
           // Simply add the opposing sort class
-          $(this).addClass( 'sorted_up' );
+          $( this ).addClass( 'sorted_up' );
         }
-        $(this).removeClass( 'sortable__start-down sortable__start-up' );
+        $( this ).removeClass( 'sortable__start-down sortable__start-up' );
 
         // For reverse sorting, reverse the sign
-        if ( $(this).hasClass( 'sorted_up' ) === true ) {
+        if ( $( this ).hasClass( 'sorted_up' ) === true ) {
           sign = -1;
           $( '.sortable' ).removeClass( 'sorted_up sorted_down' );
           $( this ).addClass( 'sorted_down' );
-        }
-        else {
+        } else {
           $( '.sortable' ).removeClass( 'sorted_up sorted_down' );
           $( this ).addClass( 'sorted_up' );
         }
@@ -136,7 +137,7 @@
 
         _updateTable( index );
 
-      });
+      } );
     }
 
     _init( options );
@@ -145,17 +146,19 @@
 
   /**
    * Instatiates the SortableTable
+   * @param { object } options - An options object
+   * @returns { object } Attached objects for each matched element
    */
   $.fn.sortableTable = function( options ) {
     return this.each( function() {
       ( options || ( options = {} ) ).$element = $( this );
       var scol = new SortableTable( this, options );
-    });
+    } );
   };
 
   $( document ).ready( function() {
-    $( '.table__sortable' ).sortableTable();    
-  });
+    $( '.table__sortable' ).sortableTable();
+  } );
 
 
-}( jQuery ));
+}( jQuery ) );
