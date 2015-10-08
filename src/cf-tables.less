@@ -13,40 +13,7 @@
   name: Tables
   family: cf-tables
   patterns:
-    - name: Table base style (inherited from cf-core)
-      markup: |
-        <table>
-            <thead>
-                <tr>
-                    <th>Column 1 header</th>
-                    <th>Column 2 header</th>
-                    <th>Column 3 header</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Row 1, column 1</td>
-                    <td>Row 1, column 2</td>
-                    <td class="table_cell__right-align">13</td>
-                </tr>
-                <tr>
-                    <td>Row 2, column 1</td>
-                    <td>Row 2, column 2</td>
-                    <td class="table_cell__right-align">23</td>
-                </tr>
-                <tr>
-                    <td>Row 3, column 1</td>
-                    <td>Row 3, column 2</td>
-                    <td class="table_cell__right-align">33</td>
-                </tr>
-            </tbody>
-        </table>
-      notes:
-        - "The table is not responsive without adding one of the 'small screen'
-            classes below."
-        - "The use of the '.table__right-align' class on a TD aligns the text
-            right - see the third column above"
-    - name: Small screen base style - "stacked"
+    - name: Table base style, with small screen base style "stacked"
       markup: |
         <table class="table__small_stacked">
           <thead>
@@ -80,8 +47,14 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__small_entry-header' class
-    - name: Small screen variation - "stacked with entry header"
+        - Uses '.table__small_entry-header' class to add small screen styles
+        - "Note: Tables are not responsive without adding one of the small
+          screen classes"
+        - "The use of the '.table__right-align' class on a TD aligns the text
+            right - see the third column above"
+        - "The 'data-label' attribute is used to label each entry. Always
+          include the 'data-label' attribute for each cell!"
+    - name: Table with small screen variation - "stacked with entry header"
       markup: |
         <table class="table__small_entry-header">
           <thead>
@@ -115,9 +88,12 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__small_entry-header' class
-        - The 'data-label' attribute is used as the 
-    - name: Small screen variation - "Comparative with horizontal scroll"
+        - Uses '.table__small_entry-header' class to add small screen styles
+        - "Note: Tables are not responsive without adding one of the small
+          screen classes"
+        - "The 'data-label' attribute is used to label each entry. Always
+          include the 'data-label' attribute for each cell!"
+    - name: Table with small screen variation - "Comparative with horizontal scroll"
       markup: |
         <div class="table-wrapper__scrolling">
           <table>
@@ -181,6 +157,9 @@
         - "Must be wrapped in an element (DIV, in most cases) with the
           'table-wrapper__scrolling' class"
         - The TABLE element does not need additional markup in this case
+        - "'Comparative with horizontal scroll' also adds striped rows to
+          the table contained within, and remains striped on small screens
+          (unlike the 'table__striped' class, below)."
     - name: Standard table, with stripes
       markup: |
         <table class="table__striped">
