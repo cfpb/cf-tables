@@ -21,8 +21,6 @@
     "node.extend": "~1.1.5",
     "pa11y": "^2.4.2",
     "phantomjs": "^1.9.18",
-    "react": "0.13.3",
-    "react-tools": "^0.13.3",
     "time-grunt": "~1.2.1"
   }
 }

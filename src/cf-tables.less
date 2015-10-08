@@ -96,7 +96,7 @@
     - name: Table with small screen variation - "Comparative with horizontal scroll"
       markup: |
         <div class="table-wrapper__scrolling">
-          <table>
+          <table class="table__striped">
             <thead>
               <tr>
                 <th>Column 1</th>
@@ -351,12 +351,9 @@ table {
 
 .table-wrapper__scrolling {
     box-sizing: border-box;
-    overflow-x: auto;
     overflow-y: hidden;
-    width: 100%;
     table {
         border: 1px solid @table__scrolling-border;
-        .table__striped();
     }
 }
 
@@ -369,7 +366,7 @@ table {
     }
 }
 
-table.table__sortable {
+.table__sortable {
     .sortable:after {
         display: inline-block;
         content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC);
@@ -386,16 +383,10 @@ table.table__sortable {
 
     .sortable.sorted_down:after,
     .sortable.sorted_up:hover:after {
-        -ms-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
 
     .sortable.sorted_down:hover:after {
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 }
@@ -433,7 +424,6 @@ table.table__sortable {
         .table__small_stacked();
         tbody td:first-child {
             margin-top: 0;
-            margin-bottom: 1.16666667em;
             font-size: 1.125em;
             font-weight: 400;
             line-height: 1.22222222;
@@ -449,9 +439,6 @@ table.table__sortable {
             border-bottom: none;
             margin-bottom: unit( 30px / @base-font-size-px, em );
         }
-    }
-    .table-wrapper__scrolling table {
-
     }
 });
 
