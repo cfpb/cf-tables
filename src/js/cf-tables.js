@@ -73,7 +73,7 @@
      * in the first array.
      */
     function _getRows( index ) {
-      var child = index + 1;
+      var child = index + 1;    
       // Clear the model
       rows.length = 0;
       // Find the value in each row of the column we're sorting by,
@@ -107,29 +107,27 @@
       $headercells.on( 'click', function() {
         var sortType = $( this ).attr( 'data-sort_type' ),
             sign = 1,
+            $cell = $( this ),
             $firstChild = $table.find( 'tr:first-child' ),
             index = $firstChild.children( 'th, td' ).index( $( this ) );
 
         _getRows( index );
 
-        // Handle .sortable__start-* classes
-        if ( $( this ).hasClass( 'sortable__start-up' ) === true ) {
-          // Simply add the opposing sort class
-          $( this ).addClass( 'sorted_down' );
-        } else if ( $( this ).hasClass( 'sortable__start-down' ) === true ) {
-          // Simply add the opposing sort class
-          $( this ).addClass( 'sorted_up' );
-        }
-        $( this ).removeClass( 'sortable__start-down sortable__start-up' );
-
-        // For reverse sorting, reverse the sign
-        if ( $( this ).hasClass( 'sorted_up' ) === true ) {
+        // Determine sign
+        if ( $cell.hasClass( 'sorted_up' ) || $cell.hasClass( 'sortable__start-down' ) ) {
           sign = -1;
-          $( '.sortable' ).removeClass( 'sorted_up sorted_down' );
-          $( this ).addClass( 'sorted_down' );
-        } else {
-          $( '.sortable' ).removeClass( 'sorted_up sorted_down' );
-          $( this ).addClass( 'sorted_up' );
+        }
+
+        // Remove existing sort classes in the table
+        $headercells.removeClass( 'sortable__start-down sortable__start-up' );
+        $headercells.removeClass( 'sorted_down sorted_up' );
+
+        // Add correct class
+        if ( sign === 1 ) {
+          $cell.addClass( 'sorted_up' );
+        } 
+        else {
+          $cell.addClass( 'sorted_down' );
         }
 
         // Perform the row sort
