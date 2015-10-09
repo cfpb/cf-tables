@@ -1,0 +1,451 @@
+// Import external dependencies
+
+@import '../../cf-core/src/cf-core.less';
+
+/* ==========================================================================
+   Capital Framework
+   Table Styling
+   ========================================================================== */
+
+
+
+/* topdoc
+  name: Tables
+  family: cf-tables
+  patterns:
+    - name: Table base style, with small screen base style "stacked"
+      markup: |
+        <table class="table__small_stacked">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Column 1">Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__small_entry-header' class to add small screen styles
+        - "Note: Tables are not responsive without adding one of the small
+          screen classes"
+        - "The use of the '.table__right-align' class on a TD aligns the text
+            right - see the third column above"
+        - "The 'data-label' attribute is used to label each entry. Always
+          include the 'data-label' attribute for each cell!"
+    - name: Table with small screen variation - "stacked with entry header"
+      markup: |
+        <table class="table__small_entry-header">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Column 1">Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__small_entry-header' class to add small screen styles
+        - "Note: Tables are not responsive without adding one of the small
+          screen classes"
+        - "The 'data-label' attribute is used to label each entry. Always
+          include the 'data-label' attribute for each cell!"
+    - name: Table with small screen variation - "Comparative with horizontal scroll"
+      markup: |
+        <div class="table-wrapper__scrolling">
+          <table class="table__striped">
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+                <th>Column 6</th>
+                <th>Column 7</th>
+                <th>Column 8</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Column 1">Row A</td>
+                <td data-label="Column 2">Cell A2</td>
+                <td data-label="Column 3">Cell A3</td>
+                <td data-label="Column 4">Cell A4</td>
+                <td data-label="Column 5">Cell A5</td>
+                <td data-label="Column 6">Cell A6</td>
+                <td data-label="Column 7">Cell A7</td>
+                <td data-label="Column 8">Cell A8</td>
+              </tr>
+              <tr>
+                <td data-label="Column 1">Row B</td>
+                <td data-label="Column 2">Cell B2</td>
+                <td data-label="Column 3">Cell B3</td>
+                <td data-label="Column 4">Cell B4</td>
+                <td data-label="Column 5">Cell B5</td>
+                <td data-label="Column 6">Cell B6</td>
+                <td data-label="Column 7">Cell B7</td>
+                <td data-label="Column 8">Cell B8</td>
+              </tr>
+              <tr>
+                <td data-label="Column 1">Row C</td>
+                <td data-label="Column 2">Cell C2</td>
+                <td data-label="Column 3">Cell C3</td>
+                <td data-label="Column 4">Cell C4</td>
+                <td data-label="Column 5">Cell C5</td>
+                <td data-label="Column 6">Cell C6</td>
+                <td data-label="Column 7">Cell C7</td>
+                <td data-label="Column 8">Cell C8</td>
+              </tr>
+              <tr>
+                <td data-label="Column 1">Row D</td>
+                <td data-label="Column 2">Cell D2</td>
+                <td data-label="Column 3">Cell D3</td>
+                <td data-label="Column 4">Cell D4</td>
+                <td data-label="Column 5">Cell D5</td>
+                <td data-label="Column 6">Cell D6</td>
+                <td data-label="Column 7">Cell D7</td>
+                <td data-label="Column 8">Cell D8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      notes:
+        - "Must be wrapped in an element (DIV, in most cases) with the
+          'table-wrapper__scrolling' class"
+        - The TABLE element does not need additional markup in this case
+        - "'Comparative with horizontal scroll' also adds striped rows to
+          the table contained within, and remains striped on small screens
+          (unlike the 'table__striped' class, below)."
+    - name: Standard table, with stripes
+      markup: |
+        <table class="table__striped">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Column 1">Row A</td>
+              <td data-label="Column 2">Cell A2</td>
+              <td data-label="Column 3">Cell A3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row B</td>
+              <td data-label="Column 2">Cell B2</td>
+              <td data-label="Column 3">Cell B3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row C</td>
+              <td data-label="Column 2">Cell C2</td>
+              <td data-label="Column 3">Cell C3</td>
+            </tr>
+            <tr>
+              <td data-label="Column 1">Row D</td>
+              <td data-label="Column 2">Cell D2</td>
+              <td data-label="Column 3">Cell D3</td>
+            </tr>
+          </tbody>
+        </table>
+      notes:
+        - Uses '.table__striped' class
+        - Striping is not visible by default on small screens
+    - name: Sortable Table
+      markup: |
+        <table class="table__sortable">
+            <thead>
+                <tr>
+                    <th>
+                        Agency
+                    </th>
+                    <th class="sortable">
+                        Languages
+                    </th>
+                    <th class="sortable sortable__start-up" data-sort_type="number">
+                        Distance
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Alpha
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        2.6 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Beta
+                    </td>
+                    <td data-label="Languages">
+                        English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        1.4 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gamma
+                    </td>
+                    <td data-label="Languages">
+                        English, French, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        1.4 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Delta
+                    </td>
+                    <td data-label="Languages">
+                        English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                        3.2 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Epsilon
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        1.6 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      Zeta
+                    </td>
+                    <td data-label="Languages">
+                      English, Spanish
+                    </td>
+                    <td data-label="Distance">
+                      1.2 mi
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Eta
+                    </td>
+                    <td data-label="Languages">
+                        English
+                    </td>
+                    <td data-label="Distance">
+                        11.1 mi
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      notes:
+        - Uses '.table__sortable' class to invoke sorting functions
+        - Columns which should be sortable have '.sortable' class applied to the THEAD TH
+        - "Note: The class '.sorted_up' refers to a sort from smallest to greatest
+          (first to last), and '.sorted_down' refers to a sort from greatest to smallest
+          (last to first)."
+        - "Please note the importance of defining a THEAD and TBODY to preserve
+          the table's header through sorting operations"
+        - "Any TH with the '.sortable' class can also be given the 'data-sort_type'
+          attribute"
+        - "In the table example above, Distance is sorted by Number value. See below for
+          the 'data-sort_type' modifier."
+        - "In the table example above, Distance is sorted low-to-high on page load by using
+          the 'sortable__start-up' class in the TH. See the 'sortable__start-up' and
+          'sortable__start-down' modifiers below."
+    - name: data-sort_type (modifier)
+      codenotes:
+        - |
+          <table class="table__sortable">
+            ...
+              <th class="sortable" data-sort_type="number">Column Name</th>
+            ...
+          </table>
+      notes:
+        - "By setting the 'data-sort_type' attribute to 'number', the column is sorted by
+          Number value"
+        - "By default, columns will be sorted as strings."
+    - name: .sortable__start-up, .sortable__start-down (modifiers)
+      codenotes:
+        - |
+          <table class="table__sortable">
+            ...
+              <th class="sortable sortable__start-up">Column Name</th>
+            ...
+          </table>
+      notes:
+        - "To sort the table on page load, use the '.sortable__start-up' and '.sortable__start-down'
+          classes."
+  tags:
+    - cf-tables
+*/
+
+// Color variables
+@table__head-bg:              #f8f8f8;
+@table__cell-bg:              #ffffff;
+@table__cell-bg_alt:          #f8f8f8;
+@table__scrolling-border:     #e3e4e5;
+@table__border:               #babbbd;
+
+// .table
+
+table {
+    .table_cell__right-align {
+        text-align: right;
+    }
+}
+
+.table-wrapper__scrolling {
+    box-sizing: border-box;
+    overflow-y: hidden;
+    table {
+        border: 1px solid @table__scrolling-border;
+    }
+}
+
+.table__striped {
+    tbody > tr:nth-child(even) {
+        & > th,
+        & > td {
+            background: @table__cell-bg_alt;
+        }
+    }
+}
+
+.table__sortable {
+    .sortable:after {
+        display: inline-block;
+        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC);
+        position: relative;
+        top: -1px;
+        visibility: hidden;
+    }
+
+    .sortable:hover:after,
+    .sortable.sorted_up:after,
+    .sortable.sorted_down:after {
+        visibility: visible;
+    }
+
+    .sortable.sorted_down:after,
+    .sortable.sorted_up:hover:after {
+        transform: rotate(180deg);
+    }
+
+    .sortable.sorted_down:hover:after {
+        transform: rotate(0deg);
+    }
+}
+
+.respond-to-max( @mobile-max, {
+    .table__striped tbody > tr:nth-child(even) {
+        & > th,
+        & > td {
+            background: @table__cell-bg;
+        }
+    }
+    .table__small_stacked {
+        tr,
+        td {
+            display: block;
+        }
+        thead {
+          display: none
+        }
+        td[data-label]:before {
+            .webfont-demi();
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: .41666667em;
+            font-size: .875em;
+            line-height: 1.83333333;
+            display: block;
+            content: attr(data-label);
+        }
+        td:last-child {
+          margin-bottom: unit( 30px / @base-font-size-px, em );
+        }
+    }
+    .table__small_entry-header {
+        .table__small_stacked();
+        tbody td:first-child {
+            margin-top: 0;
+            font-size: 1.125em;
+            font-weight: 400;
+            line-height: 1.22222222;
+            background-color: @table__head-bg;
+            padding-bottom: .75em;
+            margin-bottom: unit( 10px / @base-font-size-px, em);
+            border-bottom: 1px solid @table__border;
+        }
+        tbody td:first-child:before {
+            display: none;
+        }
+        tbody tr {
+            border-bottom: none;
+            margin-bottom: unit( 30px / @base-font-size-px, em );
+        }
+    }
+});
+
+// 
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

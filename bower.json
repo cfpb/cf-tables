@@ -1,0 +1,40 @@
+{
+  "name": "cf-tables",
+  "version": "0.1.0",
+  "description": "Tables component of Capital Framework",
+  "keywords": [
+    "capital-framework",
+    "capital",
+    "less",
+    "jquery",
+    "js"
+  ],
+  "authors": [
+    {
+      "name": "Consumer Financial Protection Bureau",
+      "url": "https://cfpb.github.io/"
+    }
+  ],
+  "homepage": "https://github.com/cfpb/cf-tables",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cf-tables.git"
+  },
+  "license": "https://github.com/cfpb/cf-tables/blob/gh-pages/TERMS.md",
+  "main": "src/cf-tables.less",
+  "dependencies": {
+    "cf-core": "^1.0.3",
+    "jquery": "~1.11.0"
+  },
+  "exportsOverride": {
+    "cf-*": {
+      "css": "src/**/*.css",
+      "less": "src/**/*.less",
+      "fonts": "src/fonts/*.*",
+      "js": "src/**/*.js"
+    }
+  },
+  "devDependencies": {
+    "qunit": "~1.19.0"
+  }
+}

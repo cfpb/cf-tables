@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cf-tables docs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic">
+    <link rel="stylesheet" type="text/css" href="static/docs/brackets.css">
+    <link rel="stylesheet" type="text/css" href="static/docs/docs.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  </head>
+  <body>
+    <div class="docs-sidebar-wrapper">
+      <div class="docs-sidebar-wrapper_body">
+        <div class="docs-masthead">
+          <h1 class="docs-title"><span class="docs-icon">&lt;/&gt;</span> cf-tables docs
+          </h1><a href="https://github.com/cfpb/cf-tables" class="docs-repo">view the repository</a>
+        </div>
+        <div id="tables" class="docs-component">
+          <h2 class="docs-component_header"><span>Tables</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Table base style, with small screen base style &quot;stacked&quot;</h3>
+              <section class="docs-pattern_pattern">
+<table class="table__small_stacked">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__small_stacked&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column 1&lt;/th&gt;
+      &lt;th&gt;Column 2&lt;/th&gt;
+      &lt;th&gt;Column 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row A&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell A2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell A3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row B&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell B2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell B3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row C&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell C2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell C3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row D&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell D2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell D3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__small_stacked\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Uses '.table__small_entry-header' class to add small screen styles</li>
+                  <li>Note: Tables are not responsive without adding one of the small screen classes</li>
+                  <li>The use of the '.table__right-align' class on a TD aligns the text right - see the third column above</li>
+                  <li>The 'data-label' attribute is used to label each entry. Always include the 'data-label' attribute for each cell!</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Table with small screen variation - &quot;stacked with entry header&quot;</h3>
+              <section class="docs-pattern_pattern">
+<table class="table__small_entry-header">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__small_entry-header&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column 1&lt;/th&gt;
+      &lt;th&gt;Column 2&lt;/th&gt;
+      &lt;th&gt;Column 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row A&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell A2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell A3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row B&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell B2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell B3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row C&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell C2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell C3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row D&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell D2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell D3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__small_entry-header\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Uses '.table__small_entry-header' class to add small screen styles</li>
+                  <li>Note: Tables are not responsive without adding one of the small screen classes</li>
+                  <li>The 'data-label' attribute is used to label each entry. Always include the 'data-label' attribute for each cell!</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Table with small screen variation - &quot;Comparative with horizontal scroll&quot;</h3>
+              <section class="docs-pattern_pattern">
+<div class="table-wrapper__scrolling">
+  <table class="table__striped">
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>Column 5</th>
+        <th>Column 6</th>
+        <th>Column 7</th>
+        <th>Column 8</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Column 1">Row A</td>
+        <td data-label="Column 2">Cell A2</td>
+        <td data-label="Column 3">Cell A3</td>
+        <td data-label="Column 4">Cell A4</td>
+        <td data-label="Column 5">Cell A5</td>
+        <td data-label="Column 6">Cell A6</td>
+        <td data-label="Column 7">Cell A7</td>
+        <td data-label="Column 8">Cell A8</td>
+      </tr>
+      <tr>
+        <td data-label="Column 1">Row B</td>
+        <td data-label="Column 2">Cell B2</td>
+        <td data-label="Column 3">Cell B3</td>
+        <td data-label="Column 4">Cell B4</td>
+        <td data-label="Column 5">Cell B5</td>
+        <td data-label="Column 6">Cell B6</td>
+        <td data-label="Column 7">Cell B7</td>
+        <td data-label="Column 8">Cell B8</td>
+      </tr>
+      <tr>
+        <td data-label="Column 1">Row C</td>
+        <td data-label="Column 2">Cell C2</td>
+        <td data-label="Column 3">Cell C3</td>
+        <td data-label="Column 4">Cell C4</td>
+        <td data-label="Column 5">Cell C5</td>
+        <td data-label="Column 6">Cell C6</td>
+        <td data-label="Column 7">Cell C7</td>
+        <td data-label="Column 8">Cell C8</td>
+      </tr>
+      <tr>
+        <td data-label="Column 1">Row D</td>
+        <td data-label="Column 2">Cell D2</td>
+        <td data-label="Column 3">Cell D3</td>
+        <td data-label="Column 4">Cell D4</td>
+        <td data-label="Column 5">Cell D5</td>
+        <td data-label="Column 6">Cell D6</td>
+        <td data-label="Column 7">Cell D7</td>
+        <td data-label="Column 8">Cell D8</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;table-wrapper__scrolling&quot;&gt;
+  &lt;table class=&quot;table__striped&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Column 1&lt;/th&gt;
+        &lt;th&gt;Column 2&lt;/th&gt;
+        &lt;th&gt;Column 3&lt;/th&gt;
+        &lt;th&gt;Column 4&lt;/th&gt;
+        &lt;th&gt;Column 5&lt;/th&gt;
+        &lt;th&gt;Column 6&lt;/th&gt;
+        &lt;th&gt;Column 7&lt;/th&gt;
+        &lt;th&gt;Column 8&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td data-label=&quot;Column 1&quot;&gt;Row A&lt;/td&gt;
+        &lt;td data-label=&quot;Column 2&quot;&gt;Cell A2&lt;/td&gt;
+        &lt;td data-label=&quot;Column 3&quot;&gt;Cell A3&lt;/td&gt;
+        &lt;td data-label=&quot;Column 4&quot;&gt;Cell A4&lt;/td&gt;
+        &lt;td data-label=&quot;Column 5&quot;&gt;Cell A5&lt;/td&gt;
+        &lt;td data-label=&quot;Column 6&quot;&gt;Cell A6&lt;/td&gt;
+        &lt;td data-label=&quot;Column 7&quot;&gt;Cell A7&lt;/td&gt;
+        &lt;td data-label=&quot;Column 8&quot;&gt;Cell A8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td data-label=&quot;Column 1&quot;&gt;Row B&lt;/td&gt;
+        &lt;td data-label=&quot;Column 2&quot;&gt;Cell B2&lt;/td&gt;
+        &lt;td data-label=&quot;Column 3&quot;&gt;Cell B3&lt;/td&gt;
+        &lt;td data-label=&quot;Column 4&quot;&gt;Cell B4&lt;/td&gt;
+        &lt;td data-label=&quot;Column 5&quot;&gt;Cell B5&lt;/td&gt;
+        &lt;td data-label=&quot;Column 6&quot;&gt;Cell B6&lt;/td&gt;
+        &lt;td data-label=&quot;Column 7&quot;&gt;Cell B7&lt;/td&gt;
+        &lt;td data-label=&quot;Column 8&quot;&gt;Cell B8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td data-label=&quot;Column 1&quot;&gt;Row C&lt;/td&gt;
+        &lt;td data-label=&quot;Column 2&quot;&gt;Cell C2&lt;/td&gt;
+        &lt;td data-label=&quot;Column 3&quot;&gt;Cell C3&lt;/td&gt;
+        &lt;td data-label=&quot;Column 4&quot;&gt;Cell C4&lt;/td&gt;
+        &lt;td data-label=&quot;Column 5&quot;&gt;Cell C5&lt;/td&gt;
+        &lt;td data-label=&quot;Column 6&quot;&gt;Cell C6&lt;/td&gt;
+        &lt;td data-label=&quot;Column 7&quot;&gt;Cell C7&lt;/td&gt;
+        &lt;td data-label=&quot;Column 8&quot;&gt;Cell C8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td data-label=&quot;Column 1&quot;&gt;Row D&lt;/td&gt;
+        &lt;td data-label=&quot;Column 2&quot;&gt;Cell D2&lt;/td&gt;
+        &lt;td data-label=&quot;Column 3&quot;&gt;Cell D3&lt;/td&gt;
+        &lt;td data-label=&quot;Column 4&quot;&gt;Cell D4&lt;/td&gt;
+        &lt;td data-label=&quot;Column 5&quot;&gt;Cell D5&lt;/td&gt;
+        &lt;td data-label=&quot;Column 6&quot;&gt;Cell D6&lt;/td&gt;
+        &lt;td data-label=&quot;Column 7&quot;&gt;Cell D7&lt;/td&gt;
+        &lt;td data-label=&quot;Column 8&quot;&gt;Cell D8&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;table-wrapper__scrolling\&amp;quot;&gt;\n  &lt;table class=\&amp;quot;table__striped\&amp;quot;&gt;\n    &lt;thead&gt;\n      &lt;tr&gt;\n        &lt;th&gt;Column 1&lt;/th&gt;\n        &lt;th&gt;Column 2&lt;/th&gt;\n        &lt;th&gt;Column 3&lt;/th&gt;\n        &lt;th&gt;Column 4&lt;/th&gt;\n        &lt;th&gt;Column 5&lt;/th&gt;\n        &lt;th&gt;Column 6&lt;/th&gt;\n        &lt;th&gt;Column 7&lt;/th&gt;\n        &lt;th&gt;Column 8&lt;/th&gt;\n      &lt;/tr&gt;\n    &lt;/thead&gt;\n    &lt;tbody&gt;\n      &lt;tr&gt;\n        &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 4\&amp;quot;&gt;Cell A4&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 5\&amp;quot;&gt;Cell A5&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 6\&amp;quot;&gt;Cell A6&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 7\&amp;quot;&gt;Cell A7&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 8\&amp;quot;&gt;Cell A8&lt;/td&gt;\n      &lt;/tr&gt;\n      &lt;tr&gt;\n        &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 4\&amp;quot;&gt;Cell B4&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 5\&amp;quot;&gt;Cell B5&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 6\&amp;quot;&gt;Cell B6&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 7\&amp;quot;&gt;Cell B7&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 8\&amp;quot;&gt;Cell B8&lt;/td&gt;\n      &lt;/tr&gt;\n      &lt;tr&gt;\n        &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 4\&amp;quot;&gt;Cell C4&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 5\&amp;quot;&gt;Cell C5&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 6\&amp;quot;&gt;Cell C6&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 7\&amp;quot;&gt;Cell C7&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 8\&amp;quot;&gt;Cell C8&lt;/td&gt;\n      &lt;/tr&gt;\n      &lt;tr&gt;\n        &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 4\&amp;quot;&gt;Cell D4&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 5\&amp;quot;&gt;Cell D5&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 6\&amp;quot;&gt;Cell D6&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 7\&amp;quot;&gt;Cell D7&lt;/td&gt;\n        &lt;td data-label=\&amp;quot;Column 8\&amp;quot;&gt;Cell D8&lt;/td&gt;\n      &lt;/tr&gt;\n    &lt;/tbody&gt;\n  &lt;/table&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Must be wrapped in an element (DIV, in most cases) with the 'table-wrapper__scrolling' class</li>
+                  <li>The TABLE element does not need additional markup in this case</li>
+                  <li>'Comparative with horizontal scroll' also adds striped rows to the table contained within, and remains striped on small screens (unlike the 'table__striped' class, below).</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Standard table, with stripes</h3>
+              <section class="docs-pattern_pattern">
+<table class="table__striped">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3">Cell B3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row C</td>
+      <td data-label="Column 2">Cell C2</td>
+      <td data-label="Column 3">Cell C3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row D</td>
+      <td data-label="Column 2">Cell D2</td>
+      <td data-label="Column 3">Cell D3</td>
+    </tr>
+  </tbody>
+</table>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column 1&lt;/th&gt;
+      &lt;th&gt;Column 2&lt;/th&gt;
+      &lt;th&gt;Column 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row A&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell A2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell A3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row B&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell B2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell B3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row C&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell C2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell C3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-label=&quot;Column 1&quot;&gt;Row D&lt;/td&gt;
+      &lt;td data-label=&quot;Column 2&quot;&gt;Cell D2&lt;/td&gt;
+      &lt;td data-label=&quot;Column 3&quot;&gt;Cell D3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__striped\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Uses '.table__striped' class</li>
+                  <li>Striping is not visible by default on small screens</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Sortable Table</h3>
+              <section class="docs-pattern_pattern">
+<table class="table__sortable">
+    <thead>
+        <tr>
+            <th>
+                Agency
+            </th>
+            <th class="sortable">
+                Languages
+            </th>
+            <th class="sortable sortable__start-up" data-sort_type="number">
+                Distance
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Alpha
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                2.6 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Beta
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                1.4 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gamma
+            </td>
+            <td data-label="Languages">
+                English, French, Spanish
+            </td>
+            <td data-label="Distance">
+                1.4 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Delta
+            </td>
+            <td data-label="Languages">
+                English, Spanish
+            </td>
+            <td data-label="Distance">
+                3.2 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Epsilon
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                1.6 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Zeta
+            </td>
+            <td data-label="Languages">
+              English, Spanish
+            </td>
+            <td data-label="Distance">
+              1.2 mi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Eta
+            </td>
+            <td data-label="Languages">
+                English
+            </td>
+            <td data-label="Distance">
+                11.1 mi
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__sortable&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;
+                Agency
+            &lt;/th&gt;
+            &lt;th class=&quot;sortable&quot;&gt;
+                Languages
+            &lt;/th&gt;
+            &lt;th class=&quot;sortable sortable__start-up&quot; data-sort_type=&quot;number&quot;&gt;
+                Distance
+            &lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Alpha
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                2.6 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Beta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                1.4 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Gamma
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English, French, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                1.4 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Delta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                3.2 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Epsilon
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                1.6 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+              Zeta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+              English, Spanish
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+              1.2 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Eta
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Languages&quot;&gt;
+                English
+            &lt;/td&gt;
+            &lt;td data-label=&quot;Distance&quot;&gt;
+                11.1 mi
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__sortable\&amp;quot;&gt;\n    &lt;thead&gt;\n        &lt;tr&gt;\n            &lt;th&gt;\n                Agency\n            &lt;/th&gt;\n            &lt;th class=\&amp;quot;sortable\&amp;quot;&gt;\n                Languages\n            &lt;/th&gt;\n            &lt;th class=\&amp;quot;sortable sortable__start-up\&amp;quot; data-sort_type=\&amp;quot;number\&amp;quot;&gt;\n                Distance\n            &lt;/th&gt;\n        &lt;/tr&gt;\n    &lt;/thead&gt;\n    &lt;tbody&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Alpha\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                2.6 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Beta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                1.4 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Gamma\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English, French, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                1.4 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Delta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                3.2 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Epsilon\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                1.6 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n              Zeta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n              English, Spanish\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n              1.2 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Eta\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Languages\&amp;quot;&gt;\n                English\n            &lt;/td&gt;\n            &lt;td data-label=\&amp;quot;Distance\&amp;quot;&gt;\n                11.1 mi\n            &lt;/td&gt;\n        &lt;/tr&gt;\n    &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Uses '.table__sortable' class to invoke sorting functions</li>
+                  <li>Columns which should be sortable have '.sortable' class applied to the THEAD TH</li>
+                  <li>Note: The class '.sorted_up' refers to a sort from smallest to greatest (first to last), and '.sorted_down' refers to a sort from greatest to smallest (last to first).</li>
+                  <li>Please note the importance of defining a THEAD and TBODY to preserve the table's header through sorting operations</li>
+                  <li>Any TH with the '.sortable' class can also be given the 'data-sort_type' attribute</li>
+                  <li>In the table example above, Distance is sorted by Number value. See below for the 'data-sort_type' modifier.</li>
+                  <li>In the table example above, Distance is sorted low-to-high on page load by using the 'sortable__start-up' class in the TH. See the 'sortable__start-up' and 'sortable__start-down' modifiers below.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">data-sort_type (modifier)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>&lt;table class=&quot;table__sortable&quot;&gt;
+  ...
+    &lt;th class=&quot;sortable&quot; data-sort_type=&quot;number&quot;&gt;Column Name&lt;/th&gt;
+  ...
+&lt;/table&gt;</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>By setting the 'data-sort_type' attribute to 'number', the column is sorted by Number value</li>
+                  <li>By default, columns will be sorted as strings.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.sortable__start-up, .sortable__start-down (modifiers)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>&lt;table class=&quot;table__sortable&quot;&gt;
+  ...
+    &lt;th class=&quot;sortable sortable__start-up&quot;&gt;Column Name&lt;/th&gt;
+  ...
+&lt;/table&gt;</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>To sort the table on page load, use the '.sortable__start-up' and '.sortable__start-down' classes.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="docs-sidebar-wrapper_sidebar">
+        <ul class="docs-nav">
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-core/docs/" class="docs-nav_link">cf-core</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-buttons/docs/" class="docs-nav_link">cf-buttons</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-expandables/docs/" class="docs-nav_link">cf-expandables</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-forms/docs/" class="docs-nav_link">cf-forms</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-grid/docs/" class="docs-nav_link">cf-grid</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-icons/docs/" class="docs-nav_link">cf-icons</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-layout/docs/" class="docs-nav_link">cf-layout</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-pagination/docs/" class="docs-nav_link">cf-pagination</a></li>
+          <li class="docs-nav_item"><a href="https://cfpb.github.io/cf-typography/docs/" class="docs-nav_link">cf-typography</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="static/docs/main.min.js"></script>
+    <script src="static/js/component.js"></script>
+  </body>
+</html>
