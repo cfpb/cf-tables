@@ -401,7 +401,7 @@
             display: block;
         }
 
-        thead {
+        & > thead {
           display: none
         }
 
@@ -423,7 +423,7 @@
 
     .table__entry-header-on-small {
         .table__stack-on-small();
-        tbody td:first-child {
+        & > tbody td:first-child {
             margin-top: 0;
             font-size: 1.125em;
             font-weight: 400;
@@ -434,11 +434,11 @@
             border-bottom: 1px solid @table-border;
         }
 
-        tbody td:first-child:before {
+        & > tbody td:first-child:before {
             display: none;
         }
 
-        tbody tr {
+        & > tbody > tr {
             border-bottom: none;
             margin-bottom: unit( 30px / @base-font-size-px, em );
         }
