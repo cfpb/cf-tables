@@ -98,7 +98,7 @@
     - name: Table with small screen variation - "Comparative with horizontal scroll"
       markup: |
         <div class="table-wrapper__scrolling">
-          <table class="table__striped">
+          <table>
             <thead>
               <tr>
                 <th>Column 1</th>
@@ -343,6 +343,16 @@
 @table-scrolling-border:     #e3e4e5;
 @table-border:               #babbbd;
 
+// Mixins
+.striped-table() {
+    & > tbody > tr:nth-child(even) {
+        & > th,
+        & > td {
+            background: @table-cell-bg_alt;
+        }   
+    }
+}
+
 // .table
 
 .table_cell__right-align {
@@ -354,13 +364,7 @@
     overflow-y: hidden;
     table {
         border: 1px solid @table-scrolling-border;
-    }
-}
-
-.table__striped > tbody > tr:nth-child(even) {
-    & > th,
-    & > td {
-        background: @table-cell-bg_alt;
+        .striped-table();
     }
 }
 
@@ -388,6 +392,12 @@
         transform: rotate(0deg);
     }
 }
+
+.respond-to-min( @mobile-max, {
+    .table__striped {
+        .striped-table();
+    }  
+});
 
 .respond-to-max( @mobile-max, {
     .table__striped > tbody > tr:nth-child(even) {
