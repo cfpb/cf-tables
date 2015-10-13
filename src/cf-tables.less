@@ -398,14 +398,17 @@ table {
             background: @table__cell-bg;
         }
     }
+
     .table__small_stacked {
         tr,
         td {
             display: block;
         }
+
         thead {
           display: none
         }
+
         td[data-label]:before {
             .webfont-demi();
             text-transform: uppercase;
@@ -416,10 +419,12 @@ table {
             display: block;
             content: attr(data-label);
         }
+
         td:last-child {
-          margin-bottom: unit( 30px / @base-font-size-px, em );
+            margin-bottom: unit( 30px / @base-font-size-px, em );
         }
     }
+
     .table__small_entry-header {
         .table__small_stacked();
         tbody td:first-child {
@@ -432,18 +437,17 @@ table {
             margin-bottom: unit( 10px / @base-font-size-px, em);
             border-bottom: 1px solid @table__border;
         }
+
         tbody td:first-child:before {
             display: none;
         }
+
         tbody tr {
             border-bottom: none;
             margin-bottom: unit( 30px / @base-font-size-px, em );
         }
     }
 });
-
-// 
-
 
 /* topdoc
   name: EOF
