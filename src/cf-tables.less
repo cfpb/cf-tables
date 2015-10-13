@@ -47,7 +47,7 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__entry-header-on-small' class to add small screen styles
+        - Uses '.table__stack-on-small' class to add small screen styles
         - "Note: Tables are not responsive without adding one of the small
           screen classes"
         - "The use of the '.table__right-align' class on a TD aligns the text
@@ -56,7 +56,7 @@
           include the 'data-label' attribute for each cell!"
     - name: Table with small screen variation - "stacked with entry header"
       markup: |
-        <table class="table__entry-header-on-small">
+        <table class="table__stack-on-small table__entry-header-on-small">
           <thead>
             <tr>
               <th>Column 1</th>
@@ -88,7 +88,9 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__entry-header-on-small' class to add small screen styles
+        - "Uses '.table__entry-header-on-small' class in addition to
+          '.table__stack-on-small' class to style the first column as an
+          entry header. Note that this requires both classes be added."
         - "Note: Tables are not responsive without adding one of the small
           screen classes"
         - "The 'data-label' attribute is used to label each entry. Always
@@ -422,7 +424,6 @@
     }
 
     .table__entry-header-on-small {
-        .table__stack-on-small();
         & > tbody td:first-child {
             margin-top: 0;
             font-size: 1.125em;
