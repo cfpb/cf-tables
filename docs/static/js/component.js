@@ -10425,7 +10425,7 @@ return jQuery;
      * in the first array.
      */
     function _getRows( index ) {
-      var child = index + 1;    
+      var child = index + 1;
       // Clear the model
       rows.length = 0;
       // Find the value in each row of the column we're sorting by,

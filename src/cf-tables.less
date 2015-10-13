@@ -357,12 +357,10 @@ table {
     }
 }
 
-.table__striped {
-    tbody > tr:nth-child(even) {
-        & > th,
-        & > td {
-            background: @table__cell-bg_alt;
-        }
+.table__striped > tbody > tr:nth-child(even) {
+    & > th,
+    & > td {
+        background: @table__cell-bg_alt;
     }
 }
 
