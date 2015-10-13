@@ -1,7 +1,18 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
-## 1.0.0 - 2015-09-29
+## 0.1.1 - 2015-10-13
+
+### Changed
+- Whitespace fixes
+- Reduced nesting of .table__striped
+- Various name changes
+- Removed .table-cell__right-align from table
+- Additional child selectors added
+- .table__stack-on-small() removed from .table__entry-header-on-small
+- Improved approach to table striping
+
+## 0.1.0 - 2015-10-09
 
 ### Added
 - .table__small_stacked, the base responsive table for small screens
