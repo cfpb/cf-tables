@@ -10466,20 +10466,20 @@ return jQuery;
         _getRows( index );
 
         // Determine sign
-        if ( $cell.hasClass( 'sorted_up' ) || $cell.hasClass( 'sortable__start-down' ) ) {
+        if ( $cell.hasClass( 'sorted-up' ) || $cell.hasClass( 'sortable__start-down' ) ) {
           sign = -1;
         }
 
         // Remove existing sort classes in the table
         $headercells.removeClass( 'sortable__start-down sortable__start-up' );
-        $headercells.removeClass( 'sorted_down sorted_up' );
+        $headercells.removeClass( 'sorted-down sorted-up' );
 
         // Add correct class
         if ( sign === 1 ) {
-          $cell.addClass( 'sorted_up' );
+          $cell.addClass( 'sorted-up' );
         } 
         else {
-          $cell.addClass( 'sorted_down' );
+          $cell.addClass( 'sorted-down' );
         }
 
         // Perform the row sort

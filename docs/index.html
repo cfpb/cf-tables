@@ -29,7 +29,7 @@
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Table base style, with small screen base style &quot;stacked&quot;</h3>
               <section class="docs-pattern_pattern">
-<table class="table__small_stacked">
+<table class="table__stack-on-small">
   <thead>
     <tr>
       <th>Column 1</th>
@@ -63,7 +63,7 @@
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__small_stacked&quot;&gt;
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__stack-on-small&quot;&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Column 1&lt;/th&gt;
@@ -95,11 +95,11 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__small_stacked\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__stack-on-small\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-notes">
-                  <li>Uses '.table__small_entry-header' class to add small screen styles</li>
+                  <li>Uses '.table__entry-header-on-small' class to add small screen styles</li>
                   <li>Note: Tables are not responsive without adding one of the small screen classes</li>
                   <li>The use of the '.table__right-align' class on a TD aligns the text right - see the third column above</li>
                   <li>The 'data-label' attribute is used to label each entry. Always include the 'data-label' attribute for each cell!</li>
@@ -109,7 +109,7 @@
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Table with small screen variation - &quot;stacked with entry header&quot;</h3>
               <section class="docs-pattern_pattern">
-<table class="table__small_entry-header">
+<table class="table__entry-header-on-small">
   <thead>
     <tr>
       <th>Column 1</th>
@@ -143,7 +143,7 @@
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__small_entry-header&quot;&gt;
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;table class=&quot;table__entry-header-on-small&quot;&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Column 1&lt;/th&gt;
@@ -175,11 +175,11 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__small_entry-header\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-tables/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;table class=\&amp;quot;table__entry-header-on-small\&amp;quot;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Column 1&lt;/th&gt;\n      &lt;th&gt;Column 2&lt;/th&gt;\n      &lt;th&gt;Column 3&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row A&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell A2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell A3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row B&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell B2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell B3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row C&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell C2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell C3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td data-label=\&amp;quot;Column 1\&amp;quot;&gt;Row D&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 2\&amp;quot;&gt;Cell D2&lt;/td&gt;\n      &lt;td data-label=\&amp;quot;Column 3\&amp;quot;&gt;Cell D3&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-notes">
-                  <li>Uses '.table__small_entry-header' class to add small screen styles</li>
+                  <li>Uses '.table__entry-header-on-small' class to add small screen styles</li>
                   <li>Note: Tables are not responsive without adding one of the small screen classes</li>
                   <li>The 'data-label' attribute is used to label each entry. Always include the 'data-label' attribute for each cell!</li>
                 </ul>

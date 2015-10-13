@@ -15,7 +15,7 @@
   patterns:
     - name: Table base style, with small screen base style "stacked"
       markup: |
-        <table class="table__small_stacked">
+        <table class="table__stack-on-small">
           <thead>
             <tr>
               <th>Column 1</th>
@@ -47,7 +47,7 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__small_entry-header' class to add small screen styles
+        - Uses '.table__entry-header-on-small' class to add small screen styles
         - "Note: Tables are not responsive without adding one of the small
           screen classes"
         - "The use of the '.table__right-align' class on a TD aligns the text
@@ -56,7 +56,7 @@
           include the 'data-label' attribute for each cell!"
     - name: Table with small screen variation - "stacked with entry header"
       markup: |
-        <table class="table__small_entry-header">
+        <table class="table__entry-header-on-small">
           <thead>
             <tr>
               <th>Column 1</th>
@@ -88,7 +88,7 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__small_entry-header' class to add small screen styles
+        - Uses '.table__entry-header-on-small' class to add small screen styles
         - "Note: Tables are not responsive without adding one of the small
           screen classes"
         - "The 'data-label' attribute is used to label each entry. Always
@@ -335,11 +335,11 @@
 */
 
 // Color variables
-@table__head-bg:              #f8f8f8;
-@table__cell-bg:              #ffffff;
-@table__cell-bg_alt:          #f8f8f8;
-@table__scrolling-border:     #e3e4e5;
-@table__border:               #babbbd;
+@table-head-bg:              #f8f8f8;
+@table-cell-bg:              #ffffff;
+@table-cell-bg_alt:           #f8f8f8;
+@table-scrolling-border:     #e3e4e5;
+@table-border:               #babbbd;
 
 // .table
 
@@ -353,14 +353,14 @@ table {
     box-sizing: border-box;
     overflow-y: hidden;
     table {
-        border: 1px solid @table__scrolling-border;
+        border: 1px solid @table-scrolling-border;
     }
 }
 
 .table__striped > tbody > tr:nth-child(even) {
     & > th,
     & > td {
-        background: @table__cell-bg_alt;
+        background: @table-cell-bg_alt;
     }
 }
 
@@ -390,14 +390,14 @@ table {
 }
 
 .respond-to-max( @mobile-max, {
-    .table__striped tbody > tr:nth-child(even) {
+    .table__striped > tbody > tr:nth-child(even) {
         & > th,
         & > td {
-            background: @table__cell-bg;
+            background: @table-cell-bg;
         }
     }
 
-    .table__small_stacked {
+    .table__stack-on-small {
         tr,
         td {
             display: block;
@@ -423,17 +423,17 @@ table {
         }
     }
 
-    .table__small_entry-header {
-        .table__small_stacked();
+    .table__entry-header-on-small {
+        .table__stack-on-small();
         tbody td:first-child {
             margin-top: 0;
             font-size: 1.125em;
             font-weight: 400;
             line-height: 1.22222222;
-            background-color: @table__head-bg;
+            background-color: @table-head-bg;
             padding-bottom: .75em;
             margin-bottom: unit( 10px / @base-font-size-px, em);
-            border-bottom: 1px solid @table__border;
+            border-bottom: 1px solid @table-border;
         }
 
         tbody td:first-child:before {
