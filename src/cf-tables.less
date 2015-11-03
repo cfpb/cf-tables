@@ -297,8 +297,8 @@
       notes:
         - Uses '.table__sortable' class to invoke sorting functions
         - Columns which should be sortable have '.sortable' class applied to the THEAD TH
-        - "Note: The class '.sorted_up' refers to a sort from smallest to greatest
-          (first to last), and '.sorted_down' refers to a sort from greatest to smallest
+        - "Note: The class '.sorted-up' refers to a sort from smallest to greatest
+          (first to last), and '.sorted-down' refers to a sort from greatest to smallest
           (last to first)."
         - "Please note the importance of defining a THEAD and TBODY to preserve
           the table's header through sorting operations"
@@ -379,17 +379,17 @@
     }
 
     .sortable:hover:after,
-    .sortable.sorted_up:after,
-    .sortable.sorted_down:after {
+    .sortable.sorted-up:after,
+    .sortable.sorted-down:after {
         visibility: visible;
     }
 
-    .sortable.sorted_down:after,
-    .sortable.sorted_up:hover:after {
+    .sortable.sorted-down:after,
+    .sortable.sorted-up:hover:after {
         transform: rotate(180deg);
     }
 
-    .sortable.sorted_down:hover:after {
+    .sortable.sorted-down:hover:after {
         transform: rotate(0deg);
     }
 }
