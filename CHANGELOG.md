@@ -1,7 +1,7 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
-## 0.1.1 - 2015-10-13
+## 0.1.1 - 2015-11-03
 
 ### Changed
 - Whitespace fixes
@@ -11,6 +11,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - Additional child selectors added
 - .table__stack-on-small() removed from .table__entry-header-on-small
 - Improved approach to table striping
+- CFPB colors changed to 18F colors
 
 ## 0.1.0 - 2015-10-09
 
