@@ -15,7 +15,7 @@
   patterns:
     - name: Table base style, with small screen base style "stacked"
       markup: |
-        <table class="table__small_stacked">
+        <table class="table__stack-on-small">
           <thead>
             <tr>
               <th>Column 1</th>
@@ -47,7 +47,7 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__small_entry-header' class to add small screen styles
+        - Uses '.table__stack-on-small' class to add small screen styles
         - "Note: Tables are not responsive without adding one of the small
           screen classes"
         - "The use of the '.table__right-align' class on a TD aligns the text
@@ -56,7 +56,7 @@
           include the 'data-label' attribute for each cell!"
     - name: Table with small screen variation - "stacked with entry header"
       markup: |
-        <table class="table__small_entry-header">
+        <table class="table__stack-on-small table__entry-header-on-small">
           <thead>
             <tr>
               <th>Column 1</th>
@@ -88,7 +88,9 @@
           </tbody>
         </table>
       notes:
-        - Uses '.table__small_entry-header' class to add small screen styles
+        - "Uses '.table__entry-header-on-small' class in addition to
+          '.table__stack-on-small' class to style the first column as an
+          entry header. Note that this requires both classes be added."
         - "Note: Tables are not responsive without adding one of the small
           screen classes"
         - "The 'data-label' attribute is used to label each entry. Always
@@ -96,7 +98,7 @@
     - name: Table with small screen variation - "Comparative with horizontal scroll"
       markup: |
         <div class="table-wrapper__scrolling">
-          <table class="table__striped">
+          <table>
             <thead>
               <tr>
                 <th>Column 1</th>
@@ -295,8 +297,8 @@
       notes:
         - Uses '.table__sortable' class to invoke sorting functions
         - Columns which should be sortable have '.sortable' class applied to the THEAD TH
-        - "Note: The class '.sorted_up' refers to a sort from smallest to greatest
-          (first to last), and '.sorted_down' refers to a sort from greatest to smallest
+        - "Note: The class '.sorted-up' refers to a sort from smallest to greatest
+          (first to last), and '.sorted-down' refers to a sort from greatest to smallest
           (last to first)."
         - "Please note the importance of defining a THEAD and TBODY to preserve
           the table's header through sorting operations"
@@ -334,35 +336,36 @@
     - cf-tables
 */
 
-// Color variables
-@table__head-bg:              #f8f8f8;
-@table__cell-bg:              #ffffff;
-@table__cell-bg_alt:          #f8f8f8;
-@table__scrolling-border:     #e3e4e5;
-@table__border:               #babbbd;
+// Color variables (from 18F's US Web Design Standards)
+// https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss
+@table-head-bg:              #f1f1f1; // $color-gray-lightest
+@table-cell-bg:              #ffffff; // $color-white
+@table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
+@table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
+@table-border:               #aeb0b5; // $color-gray-light
+
+// Mixins
+.striped-table() {
+    & > tbody > tr:nth-child(even) {
+        & > th,
+        & > td {
+            background: @table-cell-bg_alt;
+        }   
+    }
+}
 
 // .table
 
-table {
-    .table_cell__right-align {
-        text-align: right;
-    }
+.table_cell__right-align {
+    text-align: right;
 }
 
 .table-wrapper__scrolling {
     box-sizing: border-box;
     overflow-y: hidden;
     table {
-        border: 1px solid @table__scrolling-border;
-    }
-}
-
-.table__striped {
-    tbody > tr:nth-child(even) {
-        & > th,
-        & > td {
-            background: @table__cell-bg_alt;
-        }
+        border: 1px solid @table-scrolling-border;
+        .striped-table();
     }
 }
 
@@ -376,36 +379,45 @@ table {
     }
 
     .sortable:hover:after,
-    .sortable.sorted_up:after,
-    .sortable.sorted_down:after {
+    .sortable.sorted-up:after,
+    .sortable.sorted-down:after {
         visibility: visible;
     }
 
-    .sortable.sorted_down:after,
-    .sortable.sorted_up:hover:after {
+    .sortable.sorted-down:after,
+    .sortable.sorted-up:hover:after {
         transform: rotate(180deg);
     }
 
-    .sortable.sorted_down:hover:after {
+    .sortable.sorted-down:hover:after {
         transform: rotate(0deg);
     }
 }
 
+.respond-to-min( @mobile-max, {
+    .table__striped {
+        .striped-table();
+    }  
+});
+
 .respond-to-max( @mobile-max, {
-    .table__striped tbody > tr:nth-child(even) {
+    .table__striped > tbody > tr:nth-child(even) {
         & > th,
         & > td {
-            background: @table__cell-bg;
+            background: @table-cell-bg;
         }
     }
-    .table__small_stacked {
+
+    .table__stack-on-small {
         tr,
         td {
             display: block;
         }
-        thead {
+
+        & > thead {
           display: none
         }
+
         td[data-label]:before {
             .webfont-demi();
             text-transform: uppercase;
@@ -416,34 +428,34 @@ table {
             display: block;
             content: attr(data-label);
         }
+
         td:last-child {
-          margin-bottom: unit( 30px / @base-font-size-px, em );
+            margin-bottom: unit( 30px / @base-font-size-px, em );
         }
     }
-    .table__small_entry-header {
-        .table__small_stacked();
-        tbody td:first-child {
+
+    .table__entry-header-on-small {
+        & > tbody td:first-child {
             margin-top: 0;
             font-size: 1.125em;
             font-weight: 400;
             line-height: 1.22222222;
-            background-color: @table__head-bg;
+            background-color: @table-head-bg;
             padding-bottom: .75em;
             margin-bottom: unit( 10px / @base-font-size-px, em);
-            border-bottom: 1px solid @table__border;
+            border-bottom: 1px solid @table-border;
         }
-        tbody td:first-child:before {
+
+        & > tbody td:first-child:before {
             display: none;
         }
-        tbody tr {
+
+        & > tbody > tr {
             border-bottom: none;
             margin-bottom: unit( 30px / @base-font-size-px, em );
         }
     }
 });
-
-// 
-
 
 /* topdoc
   name: EOF
