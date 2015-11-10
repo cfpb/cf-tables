@@ -1,6 +1,9 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
+## Unreleased
+- Fixed `table_wrapper__scrolling` to conform to BEM.
+
 ## 0.1.1 - 2015-11-03
 
 ### Changed
@@ -13,6 +16,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - Improved approach to table striping
 - CFPB colors changed to 18F colors
 - sorted_up, sorted_down changed to sorted-up, sorted-down
+
 
 ## 0.1.0 - 2015-10-09
 
