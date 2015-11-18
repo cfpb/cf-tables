@@ -18,7 +18,7 @@
     // rows is an Array of Arrays, serving as a model of the table
     rows = [],
     $table = $( table ),
-    $headercells = $table.find( '.sortable' );
+    $sortButton = $table.find( '.sortable' );
 
     /**
      * Initializes the SortableTable
@@ -104,30 +104,32 @@
      * No parameters - uses SortableTable properties, updates the DOM.
      */
     function _clickHandler() {
-      $headercells.on( 'click', function() {
-        var sortType = $( this ).attr( 'data-sort_type' ),
+      $sortButton.on( 'click', function() {
+        var $button = $( this ),
+            $headercell = $button.closest( 'th, td' ),
+            $table = $headercell.closest( '.table__sortable' ),
+            sortType = $button.attr( 'data-sort_type' ),
             sign = 1,
-            $cell = $( this ),
             $firstChild = $table.find( 'tr:first-child' ),
-            index = $firstChild.children( 'th, td' ).index( $( this ) );
+            index = $firstChild.children( 'th, td' ).index( $headercell );
 
         _getRows( index );
 
         // Determine sign
-        if ( $cell.hasClass( 'sorted-up' ) || $cell.hasClass( 'sortable__start-down' ) ) {
+        if ( $button.hasClass( 'sorted-up' ) || $button.hasClass( 'sortable__start-down' ) ) {
           sign = -1;
         }
 
         // Remove existing sort classes in the table
-        $headercells.removeClass( 'sortable__start-down sortable__start-up' );
-        $headercells.removeClass( 'sorted-down sorted-up' );
+        $table.find( '.sortable' ).removeClass( 'sortable__start-down sortable__start-up' );
+        $table.find( '.sortable' ).removeClass( 'sorted-down sorted-up' );
 
         // Add correct class
         if ( sign === 1 ) {
-          $cell.addClass( 'sorted-up' );
+          $button.addClass( 'sorted-up' );
         } 
         else {
-          $cell.addClass( 'sorted-down' );
+          $button.addClass( 'sorted-down' );
         }
 
         // Perform the row sort
