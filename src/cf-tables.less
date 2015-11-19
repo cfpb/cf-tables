@@ -460,9 +460,9 @@
     .table__entry-header-on-small {
         & > tbody td:first-child {
             padding-bottom: .75em;
+            border-bottom: 1px solid @table-border;
             margin-bottom: unit( 10px / @base-font-size-px, em);
             margin-top: 0;
-            border-bottom: 1px solid @table-border;
             background-color: @table-head-bg;
             font-size: 1.125em;
             font-weight: 400;
@@ -474,8 +474,8 @@
         }
 
         & > tbody > tr {
-            margin-bottom: unit( 30px / @base-font-size-px, em );
             border-bottom: none;
+            margin-bottom: unit( 30px / @base-font-size-px, em );
         }
     }
 });

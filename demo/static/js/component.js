@@ -10370,7 +10370,7 @@ return jQuery;
     // rows is an Array of Arrays, serving as a model of the table
     rows = [],
     $table = $( table ),
-    $sortButton = $table.find( '.sortable' );
+    $sortButtons = $table.find( '.sortable' );
 
     /**
      * Initializes the SortableTable
@@ -10456,7 +10456,7 @@ return jQuery;
      * No parameters - uses SortableTable properties, updates the DOM.
      */
     function _clickHandler() {
-      $sortButton.on( 'click', function() {
+      $sortButtons.on( 'click', function() {
         var $button = $( this ),
             $headercell = $button.closest( 'th, td' ),
             $table = $headercell.closest( '.table__sortable' ),
@@ -10472,9 +10472,8 @@ return jQuery;
           sign = -1;
         }
 
-        // Remove existing sort classes in the table
-        $table.find( '.sortable' ).removeClass( 'sortable__start-down sortable__start-up' );
-        $table.find( '.sortable' ).removeClass( 'sorted-down sorted-up' );
+        $sortButtons.removeClass( 'sortable__start-down sortable__start-up' );
+        $sortButtons.removeClass( 'sorted-down sorted-up' );
 
         // Add correct class
         if ( sign === 1 ) {
