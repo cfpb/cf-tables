@@ -206,11 +206,15 @@
                     <th>
                         Agency
                     </th>
-                    <th class="sortable">
+                    <th>
+                      <button class="sortable">
                         Languages
+                      </button>
                     </th>
-                    <th class="sortable sortable__start-up" data-sort_type="number">
+                    <th>
+                      <button class="sortable sortable__start-up" data-sort_type="number">
                         Distance
+                      </button>
                     </th>
                 </tr>
             </thead>
@@ -295,26 +299,30 @@
             </tbody>
         </table>
       notes:
-        - Uses '.table__sortable' class to invoke sorting functions
-        - Columns which should be sortable have '.sortable' class applied to the THEAD TH
+        - Uses '.table__sortable' class to invoke sorting functions on the table
+        - "Columns which should be sortable have that column's THEAD TH content wrapped
+          with a BUTTON, and the BUTTON has the .sortable class. (The use of a BUTTON
+          tag here addresses certain accessibility concerns.)""
         - "Note: The class '.sorted-up' refers to a sort from smallest to greatest
           (first to last), and '.sorted-down' refers to a sort from greatest to smallest
           (last to first)."
         - "Please note the importance of defining a THEAD and TBODY to preserve
           the table's header through sorting operations"
-        - "Any TH with the '.sortable' class can also be given the 'data-sort_type'
+        - "Any BUTTON with the '.sortable' class can also be given the 'data-sort_type'
           attribute"
         - "In the table example above, Distance is sorted by Number value. See below for
           the 'data-sort_type' modifier."
         - "In the table example above, Distance is sorted low-to-high on page load by using
-          the 'sortable__start-up' class in the TH. See the 'sortable__start-up' and
+          the 'sortable__start-up' class in the BUTTON. See the 'sortable__start-up' and
           'sortable__start-down' modifiers below."
     - name: data-sort_type (modifier)
       codenotes:
         - |
           <table class="table__sortable">
             ...
-              <th class="sortable" data-sort_type="number">Column Name</th>
+              <th>
+                <button class="sortable" data-sort_type="number">Column Name</button>
+              </th>
             ...
           </table>
       notes:
@@ -326,7 +334,9 @@
         - |
           <table class="table__sortable">
             ...
-              <th class="sortable sortable__start-up">Column Name</th>
+              <th>
+                <button class="sortable sortable__start-up">Column Name</button>
+              </th>
             ...
           </table>
       notes:
@@ -370,11 +380,24 @@
 }
 
 .table__sortable {
+    button.sortable {
+        width: 100%;
+        height: 100%;
+        padding: inherit;
+        margin: inherit;
+        border: none;
+        background: none;
+        font-family: inherit;
+        font-weight: inherit;
+        outline: none;
+        text-align: left;
+    }
+
     .sortable:after {
         display: inline-block;
-        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC);
         position: relative;
         top: -1px;
+        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC);
         visibility: hidden;
     }
 
@@ -420,13 +443,13 @@
 
         td[data-label]:before {
             .webfont-demi();
-            text-transform: uppercase;
+            display: block;
             margin-top: 0;
             margin-bottom: .41666667em;
+            content: attr(data-label);
             font-size: .875em;
             line-height: 1.83333333;
-            display: block;
-            content: attr(data-label);
+            text-transform: uppercase;
         }
 
         td:last-child {
@@ -436,14 +459,14 @@
 
     .table__entry-header-on-small {
         & > tbody td:first-child {
+            padding-bottom: .75em;
+            border-bottom: 1px solid @table-border;
+            margin-bottom: unit( 10px / @base-font-size-px, em);
             margin-top: 0;
+            background-color: @table-head-bg;
             font-size: 1.125em;
             font-weight: 400;
             line-height: 1.22222222;
-            background-color: @table-head-bg;
-            padding-bottom: .75em;
-            margin-bottom: unit( 10px / @base-font-size-px, em);
-            border-bottom: 1px solid @table-border;
         }
 
         & > tbody td:first-child:before {
